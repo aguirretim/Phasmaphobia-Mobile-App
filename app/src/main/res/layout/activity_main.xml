@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="#CDDC39"
+    android:backgroundTint="#FFFFFF"
+    tools:context=".Viewcontrollers.MainActivity">
+
+    <TextView
+        android:id="@+id/action_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select your 1st evidence found"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/action_Title">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/emf5Image"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/emf5" />
+
+            <ImageView
+                android:id="@+id/ghostOrbImage"
+                android:layout_width="wrap_content"
+                android:layout_height="189dp"
+                app:srcCompat="@drawable/ghostorbs" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/emf5Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="EMF 5"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/ghostOrbText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ghost Orbs "
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ghostWritingImage"
+                android:layout_width="wrap_content"
+                android:layout_height="169dp"
+                app:srcCompat="@drawable/ghostwriting" />
+
+            <ImageView
+                android:id="@+id/tempImage"
+                android:layout_width="86dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/freezing_tempt_info" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/ghostWritingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:text="Ghost Writing"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/freezingTempText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Freezing Temps"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/spiritBoxImage"
+                android:layout_width="wrap_content"
+                android:layout_height="125dp"
+                app:srcCompat="@drawable/spirit_box"
+                tools:layout_editor_absoluteX="167dp"
+                tools:layout_editor_absoluteY="306dp" />
+
+            <ImageView
+                android:id="@+id/fingerprintImage"
+                android:layout_width="176dp"
+                android:layout_height="match_parent"
+                android:clickable="false"
+                android:scaleType="centerInside"
+                android:visibility="visible"
+                app:srcCompat="@drawable/fingerprints" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/spiritBoxText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spirit Box"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/fingerprintText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fingerprints"
+                android:textAlignment="center" />
+        </TableRow>
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
