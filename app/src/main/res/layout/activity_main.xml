@@ -5,24 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:background="#CDDC39"
-    android:backgroundTint="#FFFFFF"
+    android:background="#e5d1b3"
     tools:context=".Viewcontrollers.MainActivity">
 
     <TextView
         android:id="@+id/action_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="Select your 1st evidence found"
+        android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
+        android:id="@+id/evidenceTable"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,24 +32,29 @@
         app:layout_constraintTop_toBottomOf="@+id/action_Title">
 
         <TableRow
+            android:id="@+id/evdTbRow1"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/emf5Image"
+                android:id="@+id/Image1"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
                 app:srcCompat="@drawable/emf5" />
 
+
             <ImageView
-                android:id="@+id/ghostOrbImage"
+                android:id="@+id/Image2"
                 android:layout_width="wrap_content"
-                android:layout_height="189dp"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
                 app:srcCompat="@drawable/ghostorbs" />
 
         </TableRow>
 
         <TableRow
+            android:id="@+id/evdTbRow12"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -56,36 +63,43 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="6dp"
-                android:text="EMF 5"
-                android:textAlignment="center" />
+                android:text="EMF Level 5"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:visibility="visible" />
 
             <TextView
                 android:id="@+id/ghostOrbText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ghost Orbs "
-                android:textAlignment="center" />
+                android:text="Ghost Orb"
+                android:textAlignment="center"
+                android:textColor="#000000" />
         </TableRow>
 
         <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:id="@+id/evdTbRow2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/ghostWritingImage"
                 android:layout_width="wrap_content"
-                android:layout_height="169dp"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
                 app:srcCompat="@drawable/ghostwriting" />
 
             <ImageView
                 android:id="@+id/tempImage"
-                android:layout_width="86dp"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
                 app:srcCompat="@drawable/freezing_tempt_info" />
 
         </TableRow>
 
         <TableRow
+            android:id="@+id/evdTbRow21"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -95,40 +109,42 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="25dp"
                 android:text="Ghost Writing"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/freezingTempText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Freezing Temps"
-                android:textAlignment="center" />
+                android:text="Freezing Temperatures"
+                android:textAlignment="center"
+                android:textColor="#000000" />
         </TableRow>
 
         <TableRow
+            android:id="@+id/evdTbRow3"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/spiritBoxImage"
                 android:layout_width="wrap_content"
-                android:layout_height="125dp"
-                app:srcCompat="@drawable/spirit_box"
-                tools:layout_editor_absoluteX="167dp"
-                tools:layout_editor_absoluteY="306dp" />
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/spirit_box" />
 
             <ImageView
                 android:id="@+id/fingerprintImage"
-                android:layout_width="176dp"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:clickable="false"
                 android:scaleType="centerInside"
-                android:visibility="visible"
                 app:srcCompat="@drawable/fingerprints" />
 
         </TableRow>
 
         <TableRow
+            android:id="@+id/evdTbRow31"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -137,14 +153,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Spirit Box"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/fingerprintText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Fingerprints"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="#000000" />
         </TableRow>
     </TableLayout>
 
