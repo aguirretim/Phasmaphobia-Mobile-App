@@ -1,5 +1,6 @@
 package com.example.phasmophobiamobilejournal.Viewcontrollers;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -93,18 +94,18 @@ public class MainActivity extends AppCompatActivity {
         Evidence SpiritBox = new Evidence("Spirit Box", R.drawable.spirit_box);
         Evidence Fingerprints = new Evidence("Fingerprints", R.drawable.fingerprints);
 
-        Ghost Spirit = new Ghost(SpiritBox, Fingerprints, GhostWriting);
-        Ghost Wraith = new Ghost(SpiritBox, Fingerprints, FreezingTemperatures);
-        Ghost Phantom = new Ghost(EMFLevel5, GhostOrb, FreezingTemperatures);
-        Ghost Poltergeist = new Ghost(SpiritBox, Fingerprints, GhostOrb);
-        Ghost Banshees = new Ghost(EMFLevel5, Fingerprints, FreezingTemperatures);
-        Ghost Jinn = new Ghost(SpiritBox, GhostOrb, EMFLevel5);
-        Ghost Mare = new Ghost(SpiritBox, GhostOrb, FreezingTemperatures);
-        Ghost Revenant = new Ghost(EMFLevel5, Fingerprints, GhostWriting);
-        Ghost Shade = new Ghost(EMFLevel5, GhostOrb, GhostWriting);
-        Ghost Demon = new Ghost(SpiritBox, FreezingTemperatures, GhostWriting);
-        Ghost Yurei = new Ghost(GhostOrb, FreezingTemperatures, GhostWriting);
-        Ghost Oni = new Ghost(EMFLevel5, SpiritBox, GhostWriting);
+        Ghost Spirit = new Ghost("Spirit", SpiritBox, Fingerprints, GhostWriting, getString(R.string.SpiritDesc));
+        Ghost Wraith = new Ghost("Wraith", SpiritBox, Fingerprints, FreezingTemperatures, getString(R.string.WraithDesc));
+        Ghost Phantom = new Ghost("Phantom", EMFLevel5, GhostOrb, FreezingTemperatures, getString(R.string.PhantomDesc));
+        Ghost Poltergeist = new Ghost("Poltergeist", SpiritBox, Fingerprints, GhostOrb, getString(R.string.PoltergeistDesc));
+        Ghost Banshees = new Ghost("Banshees", EMFLevel5, Fingerprints, FreezingTemperatures, getString(R.string.BansheesDesc));
+        Ghost Jinn = new Ghost("Jinn", SpiritBox, GhostOrb, EMFLevel5, getString(R.string.JinnDesc));
+        Ghost Mare = new Ghost("Mare", SpiritBox, GhostOrb, FreezingTemperatures, getString(R.string.MareDesc));
+        Ghost Revenant = new Ghost("Revenant", EMFLevel5, Fingerprints, GhostWriting, getString(R.string.RevenantDesc));
+        Ghost Shade = new Ghost("Shade", EMFLevel5, GhostOrb, GhostWriting, getString(R.string.ShadeDesc));
+        Ghost Demon = new Ghost("Demon", SpiritBox, FreezingTemperatures, GhostWriting, getString(R.string.DemonDesc));
+        Ghost Yurei = new Ghost("Yurei", GhostOrb, FreezingTemperatures, GhostWriting, getString(R.string.YureiDesc));
+        Ghost Oni = new Ghost("Oni", EMFLevel5, SpiritBox, GhostWriting, getString(R.string.OniDesc));
 
         ghostList.add(Spirit);
         ghostList.add(Wraith);
@@ -138,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
                 evideneceCollected.add(selectedEvidence);
 
                 possibleGhostList();
+
                 possibleEvidenceList = possibleEvidenceCreator();
 
                 imagesForScreenCreator();
@@ -148,6 +150,17 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(intent);*/
 
+
+            }
+        });
+
+        Image2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Show the Screen you want to show
+                Intent intent = new Intent(MainActivity.this, PossibleGhostList.
+                        class);
+                startActivity(intent);
 
             }
         });
@@ -185,17 +198,29 @@ public class MainActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.N)
     public ArrayList<Evidence> possibleEvidenceCreator() {
         possibleEvidenceList.clear();
+        String Evidence2;
+        Evidence2 = "";
+        if (evideneceCollected.size() == 2) {
+            Evidence2 = evideneceCollected.get(1);
+        }
+
         for (Ghost ghost : possibleGhostList) {
 
-            if (ghost.getEvidence1().getEvidenceTitle().contentEquals(selectedEvidence)) {
+            if (ghost.getEvidence1().getEvidenceTitle().contentEquals(selectedEvidence) ||
+                    ghost.getEvidence1().getEvidenceTitle().contentEquals(evideneceCollected.get(0)) ||
+                    ghost.getEvidence1().getEvidenceTitle().contentEquals(Evidence2)) {
             } else {
                 possibleEvidenceList.add(ghost.getEvidence1());
             }
-            if (ghost.getEvidence2().getEvidenceTitle().contentEquals(selectedEvidence)) {
+            if (ghost.getEvidence2().getEvidenceTitle().contentEquals(selectedEvidence) ||
+                    ghost.getEvidence2().getEvidenceTitle().contentEquals(evideneceCollected.get(0)) ||
+                    ghost.getEvidence2().getEvidenceTitle().contentEquals(Evidence2)) {
             } else {
                 possibleEvidenceList.add(ghost.getEvidence2());
             }
-            if (ghost.getEvidence3().getEvidenceTitle().contentEquals(selectedEvidence)) {
+            if (ghost.getEvidence3().getEvidenceTitle().contentEquals(selectedEvidence) ||
+                    ghost.getEvidence3().getEvidenceTitle().contentEquals(evideneceCollected.get(0)) ||
+                    ghost.getEvidence3().getEvidenceTitle().contentEquals(Evidence2)) {
             } else {
                 possibleEvidenceList.add(ghost.getEvidence3());
             }
@@ -204,22 +229,40 @@ public class MainActivity extends AppCompatActivity {
         }
 
         possibleEvidenceList = (ArrayList) possibleEvidenceList.stream().distinct().collect(Collectors.toList());
+
+
         return possibleEvidenceList;
     }
 
     public void possibleGhostList() {
-        for (Ghost ghost : ghostList) {
-            if (ghost.getEvidence1().getEvidenceTitle().equals(selectedEvidence)) {
-                possibleGhostList.add(ghost);
-            }
-            if (ghost.getEvidence2().getEvidenceTitle().equals(selectedEvidence)) {
-                possibleGhostList.add(ghost);
-            }
-            if (ghost.getEvidence3().getEvidenceTitle().equals(selectedEvidence)) {
-                possibleGhostList.add(ghost);
+        if (evideneceCollected.size() == 1) {
+            for (Ghost ghost : ghostList) {
+                if (ghost.getEvidence1().getEvidenceTitle().equals(selectedEvidence)) {
+                    possibleGhostList.add(ghost);
+                }
+                if (ghost.getEvidence2().getEvidenceTitle().equals(selectedEvidence)) {
+                    possibleGhostList.add(ghost);
+                }
+                if (ghost.getEvidence3().getEvidenceTitle().equals(selectedEvidence)) {
+                    possibleGhostList.add(ghost);
+                }
             }
         }
+
+        if (evideneceCollected.size() == 2) {
+            for (Ghost ghost : possibleGhostList) {
+                if (ghost.getEvidence1().getEvidenceTitle().equals(selectedEvidence)) {
+                } else if (ghost.getEvidence2().getEvidenceTitle().equals(selectedEvidence)) {
+                } else if (ghost.getEvidence3().getEvidenceTitle().equals(selectedEvidence)) {
+                } else {
+                    possibleGhostList.remove(ghost);
+                }
+            }
+        }
+
+
     }
+
 
     public void imagesForScreenCreator() {
         if (possibleEvidenceList.size() > 0) {
