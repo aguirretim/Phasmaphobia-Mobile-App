@@ -155,8 +155,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Image2.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View view) {
+
+                selectedEvidence = "" + ghostOrbText.getText();
+                evideneceCollected.add(selectedEvidence);
+
+                possibleGhostList();
+
+                possibleEvidenceList = possibleEvidenceCreator();
+
+                imagesForScreenCreator();
+
+
                 //Show the Screen you want to show
                 Intent intent = new Intent(MainActivity.this, PossibleGhostList.
                         class);
@@ -249,20 +261,27 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        if (evideneceCollected.size() == 2) {
+        ArrayList<Ghost> newGhostList = new ArrayList<Ghost>();
+        ArrayList<Evidence> evidenceToCycle = new ArrayList<Evidence>();
+
+        if (evideneceCollected.size() >= 2) {
+
             for (Ghost ghost : possibleGhostList) {
-                if (ghost.getEvidence1().getEvidenceTitle().equals(selectedEvidence)) {
-                } else if (ghost.getEvidence2().getEvidenceTitle().equals(selectedEvidence)) {
-                } else if (ghost.getEvidence3().getEvidenceTitle().equals(selectedEvidence)) {
-                } else {
-                    possibleGhostList.remove(ghost);
+                evidenceToCycle = ghost.getEvideneceForGhost();
+                if (evidenceToCycle.get(0).getEvidenceTitle().contains(selectedEvidence) ||
+                        evidenceToCycle.get(1).getEvidenceTitle().contains(selectedEvidence) ||
+                        evidenceToCycle.get(2).getEvidenceTitle().contains(selectedEvidence)
+                ) {
+                    newGhostList.add(ghost);
                 }
             }
+
+
+            possibleGhostList.clear();
+            possibleGhostList.addAll(newGhostList);
+
         }
-
-
     }
-
 
     public void imagesForScreenCreator() {
         if (possibleEvidenceList.size() > 0) {

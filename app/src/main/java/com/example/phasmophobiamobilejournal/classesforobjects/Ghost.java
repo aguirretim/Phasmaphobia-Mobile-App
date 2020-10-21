@@ -1,5 +1,7 @@
 package com.example.phasmophobiamobilejournal.classesforobjects;
 
+import java.util.ArrayList;
+
 public class Ghost {
 
 
@@ -11,8 +13,8 @@ public class Ghost {
     private Evidence Evidence1;
     private Evidence Evidence2;
     private Evidence Evidence3;
+    private ArrayList<Evidence> evideneceForGhost = new ArrayList<Evidence>();
     private String GhostDescription;
-
 
 
     /****************************
@@ -24,6 +26,9 @@ public class Ghost {
         Evidence1 = evidence1;
         Evidence2 = evidence2;
         Evidence3 = evidence3;
+        evideneceForGhost.add(Evidence1);
+        evideneceForGhost.add(Evidence2);
+        evideneceForGhost.add(Evidence3);
         GhostDescription = ghostDescription;
     }
 
@@ -72,4 +77,11 @@ public class Ghost {
         GhostDescription = ghostDescription;
     }
 
+    public ArrayList<Evidence> getEvideneceForGhost() {
+        return evideneceForGhost;
+    }
+
+    public void setEvideneceForGhost(ArrayList<Evidence> evideneceForGhost) {
+        this.evideneceForGhost = evideneceForGhost;
+    }
 }

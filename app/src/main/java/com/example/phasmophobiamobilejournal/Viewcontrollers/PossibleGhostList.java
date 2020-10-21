@@ -40,18 +40,18 @@ public class PossibleGhostList extends AppCompatActivity implements GhostAdapter
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Ghost Spirit = new Ghost("Spirit",SpiritBox, Fingerprints, GhostWriting, getString(R.string.SpiritDesc));
-        Ghost Wraith = new Ghost("Wraith",SpiritBox, Fingerprints, FreezingTemperatures, getString(R.string.WraithDesc));
-        Ghost Phantom = new Ghost("Phantom",EMFLevel5, GhostOrb, FreezingTemperatures, getString(R.string.PhantomDesc));
-        Ghost Poltergeist = new Ghost("Poltergeist",SpiritBox, Fingerprints, GhostOrb, getString(R.string.PoltergeistDesc));
-        Ghost Banshees = new Ghost("Banshees",EMFLevel5, Fingerprints, FreezingTemperatures, getString(R.string.BansheesDesc));
-        Ghost Jinn = new Ghost("Jinn",SpiritBox, GhostOrb, EMFLevel5, getString(R.string.JinnDesc));
-        Ghost Mare = new Ghost("Mare",SpiritBox, GhostOrb, FreezingTemperatures, getString(R.string.MareDesc));
-        Ghost Revenant = new Ghost("Revenant",EMFLevel5, Fingerprints, GhostWriting, getString(R.string.RevenantDesc));
-        Ghost Shade = new Ghost("Shade",EMFLevel5, GhostOrb, GhostWriting, getString(R.string.ShadeDesc));
-        Ghost Demon = new Ghost("Demon",SpiritBox, FreezingTemperatures, GhostWriting, getString(R.string.DemonDesc));
-        Ghost Yurei = new Ghost("Yurei",GhostOrb, FreezingTemperatures, GhostWriting, getString(R.string.YureiDesc));
-        Ghost Oni = new Ghost("Oni",EMFLevel5, SpiritBox, GhostWriting, getString(R.string.OniDesc));
+        Ghost Spirit = new Ghost("Spirit", SpiritBox, Fingerprints, GhostWriting, getString(R.string.SpiritDesc));
+        Ghost Wraith = new Ghost("Wraith", SpiritBox, Fingerprints, FreezingTemperatures, getString(R.string.WraithDesc));
+        Ghost Phantom = new Ghost("Phantom", EMFLevel5, GhostOrb, FreezingTemperatures, getString(R.string.PhantomDesc));
+        Ghost Poltergeist = new Ghost("Poltergeist", SpiritBox, Fingerprints, GhostOrb, getString(R.string.PoltergeistDesc));
+        Ghost Banshees = new Ghost("Banshees", EMFLevel5, Fingerprints, FreezingTemperatures, getString(R.string.BansheesDesc));
+        Ghost Jinn = new Ghost("Jinn", SpiritBox, GhostOrb, EMFLevel5, getString(R.string.JinnDesc));
+        Ghost Mare = new Ghost("Mare", SpiritBox, GhostOrb, FreezingTemperatures, getString(R.string.MareDesc));
+        Ghost Revenant = new Ghost("Revenant", EMFLevel5, Fingerprints, GhostWriting, getString(R.string.RevenantDesc));
+        Ghost Shade = new Ghost("Shade", EMFLevel5, GhostOrb, GhostWriting, getString(R.string.ShadeDesc));
+        Ghost Demon = new Ghost("Demon", SpiritBox, FreezingTemperatures, GhostWriting, getString(R.string.DemonDesc));
+        Ghost Yurei = new Ghost("Yurei", GhostOrb, FreezingTemperatures, GhostWriting, getString(R.string.YureiDesc));
+        Ghost Oni = new Ghost("Oni", EMFLevel5, SpiritBox, GhostWriting, getString(R.string.OniDesc));
 
         possibleGhostArrayList.add(Spirit);
         possibleGhostArrayList.add(Wraith);
@@ -82,7 +82,7 @@ public class PossibleGhostList extends AppCompatActivity implements GhostAdapter
         evidence2Text = (TextView) findViewById(R.id.evidence2Text);
         evidence3Text = (TextView) findViewById(R.id.evidence3Text);
         descriptionTitleText = (TextView) findViewById(R.id.descriptionTitleText);
-        RecycleListView = (RecyclerView) findViewById(R.id.ghostListView);
+        RecycleListView = (RecyclerView) findViewById(R.id.ghostDescText);
         imageView2 = (ImageView) findViewById(R.id.imageView2);
         textView5 = (TextView) findViewById(R.id.textView5);
     }
