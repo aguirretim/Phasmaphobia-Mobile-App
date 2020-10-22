@@ -2,7 +2,6 @@ package com.example.phasmophobiamobilejournal.Viewcontrollers;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.phasmophobiamobilejournal.R;
 import com.example.phasmophobiamobilejournal.adapters.GhostAdapter;
-import com.example.phasmophobiamobilejournal.classesforobjects.Evidence;
 import com.example.phasmophobiamobilejournal.classesforobjects.Ghost;
 
 import java.util.ArrayList;

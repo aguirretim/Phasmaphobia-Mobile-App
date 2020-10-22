@@ -59,7 +59,7 @@ public class GhostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         GhostAdapter.ViewHolder ViewHolder = (GhostAdapter.ViewHolder) holder;
         vGhost = vlist.get(position);
         ViewHolder.ghostNameId.setText(vGhost.getGhostName());
-        ViewHolder.evidenceneededText.setText(vGhost.getEvidence1().getEvidenceTitle() + " " + vGhost.getEvidence2().getEvidenceTitle() + " " + vGhost.getEvidence3().getEvidenceTitle());
+        ViewHolder.evidenceneededText.setText(vGhost.getEvidence1().getEvidenceTitle() + ", " + vGhost.getEvidence2().getEvidenceTitle() + ", " + vGhost.getEvidence3().getEvidenceTitle());
 
 
     }

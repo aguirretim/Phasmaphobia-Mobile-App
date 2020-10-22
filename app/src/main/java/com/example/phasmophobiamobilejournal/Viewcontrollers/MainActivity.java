@@ -173,14 +173,87 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        ghostWritingImage.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onClick(View view) {
+
+                selectedEvidence = "" + ghostWritingText.getText();
+                evideneceCollected.add(selectedEvidence);
+
+                possibleGhostList();
+
+                possibleEvidenceList = possibleEvidenceCreator();
+
+                imagesForScreenCreator();
+
+
+            }
+        });
+
+        tempImage.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onClick(View view) {
+
+                selectedEvidence = "" + freezingTempText.getText();
+                evideneceCollected.add(selectedEvidence);
+
+                possibleGhostList();
+
+                possibleEvidenceList = possibleEvidenceCreator();
+
+                imagesForScreenCreator();
+
+
+            }
+        });
+
+        spiritBoxImage.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onClick(View view) {
+
+                selectedEvidence = "" + spiritBoxText.getText();
+                evideneceCollected.add(selectedEvidence);
+
+                possibleGhostList();
+
+                possibleEvidenceList = possibleEvidenceCreator();
+
+                imagesForScreenCreator();
+
+
+            }
+        });
+
+        fingerprintImage.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onClick(View view) {
+
+                selectedEvidence = "" + fingerprintText.getText();
+                evideneceCollected.add(selectedEvidence);
+
+                possibleGhostList();
+
+                possibleEvidenceList = possibleEvidenceCreator();
+
+                imagesForScreenCreator();
+
+
+            }
+        });
+
+
         ghostImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Show the Screen you want to show
                 Intent intent = new Intent(MainActivity.this, PossibleGhostList.
                         class);
-                intent.putParcelableArrayListExtra("possibleGhostList",possibleGhostList);
-                intent.putStringArrayListExtra("evideneceCollected",evideneceCollected);
+                intent.putParcelableArrayListExtra("possibleGhostList", possibleGhostList);
+                intent.putStringArrayListExtra("evideneceCollected", evideneceCollected);
                 startActivity(intent);
 
             }
@@ -295,80 +368,91 @@ public class MainActivity extends AppCompatActivity {
             possibleGhostList.addAll(newGhostList);
 
         }
+
+        if (evideneceCollected.size() == 3) {
+            Intent intent = new Intent(MainActivity.this, PossibleGhostList.
+                    class);
+            intent.putParcelableArrayListExtra("possibleGhostList", possibleGhostList);
+            intent.putStringArrayListExtra("evideneceCollected", evideneceCollected);
+            startActivity(intent);
+
+        }
     }
 
     public void imagesForScreenCreator() {
-        if (possibleEvidenceList.size() > 0) {
+        if (evideneceCollected.size() < 3) {
+            if (possibleEvidenceList.size() > 0) {
 
 
-            for (int i = 0; i < possibleEvidenceList.size(); i++) {
-                Evidence evidence = possibleEvidenceList.get(i);
-                evideneTitlelist.add(evidence.getEvidenceTitle());
-                imageIdlist.add(evidence.getEvidenceImageId());
-            }
+                for (int i = 0; i < possibleEvidenceList.size(); i++) {
+                    Evidence evidence = possibleEvidenceList.get(i);
+                    evideneTitlelist.add(evidence.getEvidenceTitle());
+                    imageIdlist.add(evidence.getEvidenceImageId());
+                }
 
-            try {
-                firstImage = imageIdlist.get(0);
-                firstTextRef = evideneTitlelist.get(0);
-            } catch (IndexOutOfBoundsException e) {
-                e.printStackTrace();
+                try {
+                    firstImage = imageIdlist.get(0);
+                    firstTextRef = evideneTitlelist.get(0);
+                } catch (IndexOutOfBoundsException e) {
+                    e.printStackTrace();
+                    firstImage = 0;
+                    firstTextRef = "";
+                }
+                try {
+                    secoundImage = imageIdlist.get(1);
+                    secoundTextRef = evideneTitlelist.get(1);
+                } catch (IndexOutOfBoundsException e) {
+                    e.printStackTrace();
+                    secoundImage = 0;
+                    secoundTextRef = "";
+                }
+                try {
+                    thirdImage = imageIdlist.get(2);
+                    thirdTextRef = evideneTitlelist.get(2);
+                } catch (IndexOutOfBoundsException e) {
+                    e.printStackTrace();
+                    thirdImage = 0;
+                    thirdTextRef = "";
+                }
+                try {
+                    fourthImage = imageIdlist.get(3);
+                    fourthTextRef = evideneTitlelist.get(3);
+                } catch (IndexOutOfBoundsException e) {
+                    e.printStackTrace();
+                    fourthImage = 0;
+                    fourthTextRef = "";
+                }
+                try {
+                    fifthImage = imageIdlist.get(4);
+                    fifthTextRef = evideneTitlelist.get(4);
+                } catch (IndexOutOfBoundsException e) {
+                    e.printStackTrace();
+                    fifthImage = 0;
+                    fifthTextRef = "";
+                }
+                try {
+                    sixthImage = imageIdlist.get(5);
+                    sixthTextRef = evideneTitlelist.get(5);
+                } catch (IndexOutOfBoundsException e) {
+                    e.printStackTrace();
+                    sixthImage = 0;
+                    sixthTextRef = "";
+                }
+
+            } else {
                 firstImage = 0;
                 firstTextRef = "";
-            }
-            try {
-                secoundImage = imageIdlist.get(1);
-                secoundTextRef = evideneTitlelist.get(1);
-            } catch (IndexOutOfBoundsException e) {
-                e.printStackTrace();
                 secoundImage = 0;
                 secoundTextRef = "";
-            }
-            try {
-                thirdImage = imageIdlist.get(2);
-                thirdTextRef = evideneTitlelist.get(2);
-            } catch (IndexOutOfBoundsException e) {
-                e.printStackTrace();
                 thirdImage = 0;
                 thirdTextRef = "";
-            }
-            try {
-                fourthImage = imageIdlist.get(3);
-                fourthTextRef = evideneTitlelist.get(3);
-            } catch (IndexOutOfBoundsException e) {
-                e.printStackTrace();
                 fourthImage = 0;
                 fourthTextRef = "";
-            }
-            try {
-                fifthImage = imageIdlist.get(4);
-                fifthTextRef = evideneTitlelist.get(4);
-            } catch (IndexOutOfBoundsException e) {
-                e.printStackTrace();
                 fifthImage = 0;
                 fifthTextRef = "";
-            }
-            try {
-                sixthImage = imageIdlist.get(5);
-                sixthTextRef = evideneTitlelist.get(5);
-            } catch (IndexOutOfBoundsException e) {
-                e.printStackTrace();
                 sixthImage = 0;
                 sixthTextRef = "";
             }
-
-        } else {
-            firstImage = 0;
-            firstTextRef = "";
-            secoundImage = 0;
-            secoundTextRef = "";
-            thirdImage = 0;
-            thirdTextRef = "";
-            fourthImage = 0;
-            fourthTextRef = "";
-            fifthImage = 0;
-            fifthTextRef = "";
-            sixthImage = 0;
-            sixthTextRef = "";
         }
 
 
@@ -420,14 +504,9 @@ public class MainActivity extends AppCompatActivity {
             Evidence2.setText("Evidence 2: " + evideneceCollected.get(1));
             Evidence2.setVisibility(View.VISIBLE);
         }
-        if (evideneceCollected.size() == 3) {
-            Evidence3.setText("Evidence 3: " + evideneceCollected.get(2));
-            Evidence3.setVisibility(View.VISIBLE);
-        }
 
 
     }
-
 
 
     public void onResume() {
