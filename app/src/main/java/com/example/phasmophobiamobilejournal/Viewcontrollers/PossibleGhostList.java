@@ -80,11 +80,11 @@ public class PossibleGhostList extends AppCompatActivity implements GhostAdapter
             evidence1Text.setText("Evidence 1: " + evideneceCollected.get(0));
             evidence1Text.setVisibility(View.VISIBLE);
         }
-        if (evideneceCollected.size() == 2) {
+        if (evideneceCollected.size() >= 2) {
             evidence2Text.setText("Evidence 2: " + evideneceCollected.get(1));
             evidence2Text.setVisibility(View.VISIBLE);
         }
-        if (evideneceCollected.size() == 3) {
+        if (evideneceCollected.size() >= 3) {
             evidence3Text.setText("Evidence 3: " + evideneceCollected.get(2));
             evidence3Text.setVisibility(View.VISIBLE);
         }
