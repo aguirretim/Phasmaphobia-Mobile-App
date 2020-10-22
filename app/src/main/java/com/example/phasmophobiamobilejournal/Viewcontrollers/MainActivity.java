@@ -45,6 +45,12 @@ public class MainActivity extends AppCompatActivity {
     private TableRow evdTbRow31;
     private TextView spiritBoxText;
     private TextView fingerprintText;
+    private TextView Evidence1;
+    private TextView Evidence2;
+    private TextView Evidence3;
+    private ImageView ghostImage;
+    private TextView possubleGhostTitle;
+
 
     /*************************************
      *Init Variables  *
@@ -144,12 +150,6 @@ public class MainActivity extends AppCompatActivity {
 
                 imagesForScreenCreator();
 
-                //Need to figure out how to display the next screen with posisble evidence displayed
-
-               /* //Show the Screen you want to show
-                Intent intent = new Intent(MainActivity.this, MainActivity.class);
-                startActivity(intent);*/
-
 
             }
         });
@@ -169,9 +169,18 @@ public class MainActivity extends AppCompatActivity {
                 imagesForScreenCreator();
 
 
+            }
+        });
+
+
+        ghostImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 //Show the Screen you want to show
                 Intent intent = new Intent(MainActivity.this, PossibleGhostList.
                         class);
+                intent.putParcelableArrayListExtra("possibleGhostList",possibleGhostList);
+                intent.putStringArrayListExtra("evideneceCollected",evideneceCollected);
                 startActivity(intent);
 
             }
@@ -205,6 +214,11 @@ public class MainActivity extends AppCompatActivity {
         evdTbRow31 = (TableRow) findViewById(R.id.evdTbRow31);
         spiritBoxText = (TextView) findViewById(R.id.spiritBoxText);
         fingerprintText = (TextView) findViewById(R.id.fingerprintText);
+        Evidence1 = (TextView) findViewById(R.id.Evidence1);
+        Evidence2 = (TextView) findViewById(R.id.Evidence2);
+        Evidence3 = (TextView) findViewById(R.id.Evidence3);
+        ghostImage = (ImageView) findViewById(R.id.ghostImage);
+        possubleGhostTitle = (TextView) findViewById(R.id.possubleGhostTitle);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -385,7 +399,36 @@ public class MainActivity extends AppCompatActivity {
         if (evideneceCollected.size() == 2) {
             actionTitle.setText("Select your 3rd evidence found");
         }
+
+        possibleGhostButton();
     }
+
+    public void possibleGhostButton() {
+        Evidence1.setVisibility(View.GONE);
+
+        if (evideneceCollected.size() >= 1) {
+            ghostImage.setVisibility(View.VISIBLE);
+            possubleGhostTitle.setVisibility(View.VISIBLE);
+
+        }
+
+        if (evideneceCollected.size() >= 1) {
+            Evidence1.setText("Evidence 1: " + evideneceCollected.get(0));
+            Evidence1.setVisibility(View.VISIBLE);
+        }
+        if (evideneceCollected.size() == 2) {
+            Evidence2.setText("Evidence 2: " + evideneceCollected.get(1));
+            Evidence2.setVisibility(View.VISIBLE);
+        }
+        if (evideneceCollected.size() == 3) {
+            Evidence3.setText("Evidence 3: " + evideneceCollected.get(2));
+            Evidence3.setVisibility(View.VISIBLE);
+        }
+
+
+    }
+
+
 
     public void onResume() {
         super.onResume();

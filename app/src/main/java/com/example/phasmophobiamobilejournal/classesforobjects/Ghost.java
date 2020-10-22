@@ -1,8 +1,11 @@
 package com.example.phasmophobiamobilejournal.classesforobjects;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 
-public class Ghost {
+public class Ghost implements Parcelable {
 
 
     /**************************************
@@ -84,4 +87,51 @@ public class Ghost {
     public void setEvideneceForGhost(ArrayList<Evidence> evideneceForGhost) {
         this.evideneceForGhost = evideneceForGhost;
     }
+    protected Ghost(Parcel in) {
+        GhostName = in.readString();
+        Evidence1 = (Evidence) in.readValue(Evidence.class.getClassLoader());
+        Evidence2 = (Evidence) in.readValue(Evidence.class.getClassLoader());
+        Evidence3 = (Evidence) in.readValue(Evidence.class.getClassLoader());
+        if (in.readByte() == 0x01) {
+            evideneceForGhost = new ArrayList<Evidence>();
+            in.readList(evideneceForGhost, Evidence.class.getClassLoader());
+        } else {
+            evideneceForGhost = null;
+        }
+        GhostDescription = in.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(GhostName);
+        dest.writeValue(Evidence1);
+        dest.writeValue(Evidence2);
+        dest.writeValue(Evidence3);
+        if (evideneceForGhost == null) {
+            dest.writeByte((byte) (0x00));
+        } else {
+            dest.writeByte((byte) (0x01));
+            dest.writeList(evideneceForGhost);
+        }
+        dest.writeString(GhostDescription);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<Ghost> CREATOR = new Parcelable.Creator<Ghost>() {
+        @Override
+        public Ghost createFromParcel(Parcel in) {
+            return new Ghost(in);
+        }
+
+        @Override
+        public Ghost[] newArray(int size) {
+            return new Ghost[size];
+        }
+    };
+
 }

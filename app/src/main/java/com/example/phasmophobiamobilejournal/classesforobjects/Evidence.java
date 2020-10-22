@@ -1,7 +1,9 @@
 package com.example.phasmophobiamobilejournal.classesforobjects;
 
-public class Evidence {
+import android.os.Parcel;
+import android.os.Parcelable;
 
+public class Evidence implements Parcelable {
 
 
     /**************************************
@@ -39,5 +41,34 @@ public class Evidence {
     public void setEvidenceImageId(int evidenceImageId) {
         this.evidenceImageId = evidenceImageId;
     }
+
+    protected Evidence(Parcel in) {
+        evidenceTitle = in.readString();
+        evidenceImageId = in.readInt();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(evidenceTitle);
+        dest.writeInt(evidenceImageId);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<Evidence> CREATOR = new Parcelable.Creator<Evidence>() {
+        @Override
+        public Evidence createFromParcel(Parcel in) {
+            return new Evidence(in);
+        }
+
+        @Override
+        public Evidence[] newArray(int size) {
+            return new Evidence[size];
+        }
+    };
 
 }

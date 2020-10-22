@@ -2,7 +2,9 @@ package com.example.phasmophobiamobilejournal.Viewcontrollers;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,47 +30,20 @@ public class PossibleGhostList extends AppCompatActivity implements GhostAdapter
     private ImageView imageView2;
     private TextView textView5;
     private ArrayList<Ghost> possibleGhostArrayList = new ArrayList<Ghost>();
-
-    Evidence EMFLevel5 = new Evidence("EMF Level 5", R.drawable.emf5);
-    Evidence GhostOrb = new Evidence("Ghost Orb", R.drawable.ghostorbs);
-    Evidence GhostWriting = new Evidence("Ghost Writing", R.drawable.ghostwriting);
-    Evidence FreezingTemperatures = new Evidence("Freezing Temperatures", R.drawable.freezing_tempt_info);
-    Evidence SpiritBox = new Evidence("Spirit Box", R.drawable.spirit_box);
-    Evidence Fingerprints = new Evidence("Fingerprints", R.drawable.fingerprints);
+    ArrayList<String> evideneceCollected = new ArrayList<String>();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Ghost Spirit = new Ghost("Spirit", SpiritBox, Fingerprints, GhostWriting, getString(R.string.SpiritDesc));
-        Ghost Wraith = new Ghost("Wraith", SpiritBox, Fingerprints, FreezingTemperatures, getString(R.string.WraithDesc));
-        Ghost Phantom = new Ghost("Phantom", EMFLevel5, GhostOrb, FreezingTemperatures, getString(R.string.PhantomDesc));
-        Ghost Poltergeist = new Ghost("Poltergeist", SpiritBox, Fingerprints, GhostOrb, getString(R.string.PoltergeistDesc));
-        Ghost Banshees = new Ghost("Banshees", EMFLevel5, Fingerprints, FreezingTemperatures, getString(R.string.BansheesDesc));
-        Ghost Jinn = new Ghost("Jinn", SpiritBox, GhostOrb, EMFLevel5, getString(R.string.JinnDesc));
-        Ghost Mare = new Ghost("Mare", SpiritBox, GhostOrb, FreezingTemperatures, getString(R.string.MareDesc));
-        Ghost Revenant = new Ghost("Revenant", EMFLevel5, Fingerprints, GhostWriting, getString(R.string.RevenantDesc));
-        Ghost Shade = new Ghost("Shade", EMFLevel5, GhostOrb, GhostWriting, getString(R.string.ShadeDesc));
-        Ghost Demon = new Ghost("Demon", SpiritBox, FreezingTemperatures, GhostWriting, getString(R.string.DemonDesc));
-        Ghost Yurei = new Ghost("Yurei", GhostOrb, FreezingTemperatures, GhostWriting, getString(R.string.YureiDesc));
-        Ghost Oni = new Ghost("Oni", EMFLevel5, SpiritBox, GhostWriting, getString(R.string.OniDesc));
-
-        possibleGhostArrayList.add(Spirit);
-        possibleGhostArrayList.add(Wraith);
-        possibleGhostArrayList.add(Phantom);
-        possibleGhostArrayList.add(Poltergeist);
-        possibleGhostArrayList.add(Banshees);
-        possibleGhostArrayList.add(Jinn);
-        possibleGhostArrayList.add(Mare);
-        possibleGhostArrayList.add(Revenant);
-        possibleGhostArrayList.add(Shade);
-        possibleGhostArrayList.add(Demon);
-        possibleGhostArrayList.add(Yurei);
-        possibleGhostArrayList.add(Oni);
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_possible_ghost_list);
         findViews();
+        ArrayList<Ghost> extras = getIntent().getParcelableArrayListExtra("possibleGhostList");
+        evideneceCollected= getIntent().getStringArrayListExtra("evideneceCollected");
+        possibleGhostArrayList=extras;
+
+        possibleEvidenceTextSet();
 
         GhostAdapter = new GhostAdapter(possibleGhostArrayList, PossibleGhostList.this);
         GhostAdapter.setRecyclerClickListener(this);
@@ -96,6 +71,28 @@ public class PossibleGhostList extends AppCompatActivity implements GhostAdapter
         // to pass a key intent.putExtra("name",name);
         //startActivity(intent);
     }
+
+    public void possibleEvidenceTextSet() {
+        evidence1Text.setVisibility(View.GONE);
+
+
+        if (evideneceCollected.size() >= 1) {
+            evidence1Text.setText("Evidence 1: " + evideneceCollected.get(0));
+            evidence1Text.setVisibility(View.VISIBLE);
+        }
+        if (evideneceCollected.size() == 2) {
+            evidence2Text.setText("Evidence 2: " + evideneceCollected.get(1));
+            evidence2Text.setVisibility(View.VISIBLE);
+        }
+        if (evideneceCollected.size() == 3) {
+            evidence3Text.setText("Evidence 3: " + evideneceCollected.get(2));
+            evidence3Text.setVisibility(View.VISIBLE);
+        }
+
+
+    }
+
+
 }
 
 

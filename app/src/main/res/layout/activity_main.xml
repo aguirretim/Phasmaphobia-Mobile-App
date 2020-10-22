@@ -119,6 +119,7 @@
                 android:text="Freezing Temperatures"
                 android:textAlignment="center"
                 android:textColor="#000000" />
+
         </TableRow>
 
         <TableRow
@@ -163,7 +164,73 @@
                 android:text="Fingerprints"
                 android:textAlignment="center"
                 android:textColor="#000000" />
+
         </TableRow>
     </TableLayout>
+
+    <TextView
+        android:id="@+id/Evidence1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Evidence 1:"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/Evidence2"
+        app:layout_constraintEnd_toEndOf="@+id/ghostImage"
+        app:layout_constraintStart_toStartOf="@+id/ghostImage"
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/Evidence2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Evidence 2: "
+        android:textColor="#000000"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/Evidence3"
+        app:layout_constraintEnd_toEndOf="@+id/Evidence3"
+        app:layout_constraintStart_toStartOf="@+id/Evidence3" />
+
+    <TextView
+        android:id="@+id/Evidence3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Evidence 3: "
+        android:textColor="#000000"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/ghostImage"
+        app:layout_constraintEnd_toEndOf="@+id/ghostImage"
+        app:layout_constraintStart_toStartOf="@+id/ghostImage" />
+
+    <ImageView
+        android:id="@+id/ghostImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:tint="#FFFFFF"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/possubleGhostTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ghosticon" />
+
+    <TextView
+        android:id="@+id/possubleGhostTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Possible Ghost"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ghostImage"
+        app:layout_constraintStart_toStartOf="@+id/ghostImage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
