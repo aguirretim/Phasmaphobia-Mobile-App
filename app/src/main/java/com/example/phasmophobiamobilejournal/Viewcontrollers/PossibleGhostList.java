@@ -38,8 +38,8 @@ public class PossibleGhostList extends AppCompatActivity implements GhostAdapter
         setContentView(R.layout.activity_possible_ghost_list);
         findViews();
         ArrayList<Ghost> extras = getIntent().getParcelableArrayListExtra("possibleGhostList");
-        evideneceCollected= getIntent().getStringArrayListExtra("evideneceCollected");
-        possibleGhostArrayList=extras;
+        evideneceCollected = getIntent().getStringArrayListExtra("evideneceCollected");
+        possibleGhostArrayList = extras;
 
         possibleEvidenceTextSet();
 
@@ -48,6 +48,7 @@ public class PossibleGhostList extends AppCompatActivity implements GhostAdapter
         RecycleListView.setAdapter(GhostAdapter);
 
         RecycleListView.setLayoutManager(new LinearLayoutManager(PossibleGhostList.this));
+
     }
 
     private void findViews() {
@@ -56,18 +57,19 @@ public class PossibleGhostList extends AppCompatActivity implements GhostAdapter
         evidence3Text = (TextView) findViewById(R.id.evidence3Text);
         descriptionTitleText = (TextView) findViewById(R.id.descriptionTitleText);
         RecycleListView = (RecyclerView) findViewById(R.id.ghostDescText);
-        imageView2 = (ImageView) findViewById(R.id.imageView2);
-        textView5 = (TextView) findViewById(R.id.textView5);
+        imageView2 = (ImageView) findViewById(R.id.ghostImageIcon);
+        textView5 = (TextView) findViewById(R.id.returnToGhostListTXT);
     }
 
     @Override
     public void onClickPerformed(int adapterPosition) {
         Log.e("Position clicked", " " + adapterPosition);
 
-        Intent intent = new Intent(this, PossibleGhostList.class);
-        //intent.putExtra("AssessmentID", AssessmentList.get(postion).getAssessmentId());
+        Intent intent = new Intent(this, GhostDetailPage.class);
+        intent.putExtra("selectedGhost", possibleGhostArrayList.get(adapterPosition));
+        intent.putStringArrayListExtra("evideneceCollected", evideneceCollected);
         // to pass a key intent.putExtra("name",name);
-        //startActivity(intent);
+        startActivity(intent);
     }
 
     public void possibleEvidenceTextSet() {

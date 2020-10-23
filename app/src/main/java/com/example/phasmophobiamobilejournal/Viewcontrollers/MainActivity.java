@@ -370,8 +370,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (evideneceCollected.size() == 3) {
-            Intent intent = new Intent(MainActivity.this, PossibleGhostList.
+            Intent intent = new Intent(MainActivity.this, GhostDetailPage.
                     class);
+            intent.putExtra("selectedGhost", possibleGhostList.get(0));
             intent.putParcelableArrayListExtra("possibleGhostList", possibleGhostList);
             intent.putStringArrayListExtra("evideneceCollected", evideneceCollected);
             startActivity(intent);
@@ -514,5 +515,19 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+    @Override
+    public void onBackPressed() {
+        // code here to show dialog
+        if (evideneceCollected.size() == 1) {
+            evideneceCollected.clear();
+            imagesForScreenCreator();
+        }
+
+
+        //super.onBackPressed();  // optional depending on your needs
+    }
+
 }
 
