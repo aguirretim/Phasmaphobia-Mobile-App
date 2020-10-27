@@ -93,49 +93,7 @@ public class MainActivity extends AppCompatActivity {
         findViews();
 
 
-        Evidence EMFLevel5 = new Evidence("EMF Level 5", R.drawable.emf5);
-        Evidence GhostOrb = new Evidence("Ghost Orb", R.drawable.ghostorbs);
-        Evidence GhostWriting = new Evidence("Ghost Writing", R.drawable.ghostwriting);
-        Evidence FreezingTemperatures = new Evidence("Freezing Temperatures", R.drawable.freezing_tempt_info);
-        Evidence SpiritBox = new Evidence("Spirit Box", R.drawable.spirit_box);
-        Evidence Fingerprints = new Evidence("Fingerprints", R.drawable.fingerprints);
-
-        Ghost Spirit = new Ghost("Spirit", SpiritBox, Fingerprints, GhostWriting, getString(R.string.SpiritDesc));
-        Ghost Wraith = new Ghost("Wraith", SpiritBox, Fingerprints, FreezingTemperatures, getString(R.string.WraithDesc));
-        Ghost Phantom = new Ghost("Phantom", EMFLevel5, GhostOrb, FreezingTemperatures, getString(R.string.PhantomDesc));
-        Ghost Poltergeist = new Ghost("Poltergeist", SpiritBox, Fingerprints, GhostOrb, getString(R.string.PoltergeistDesc));
-        Ghost Banshees = new Ghost("Banshees", EMFLevel5, Fingerprints, FreezingTemperatures, getString(R.string.BansheesDesc));
-        Ghost Jinn = new Ghost("Jinn", SpiritBox, GhostOrb, EMFLevel5, getString(R.string.JinnDesc));
-        Ghost Mare = new Ghost("Mare", SpiritBox, GhostOrb, FreezingTemperatures, getString(R.string.MareDesc));
-        Ghost Revenant = new Ghost("Revenant", EMFLevel5, Fingerprints, GhostWriting, getString(R.string.RevenantDesc));
-        Ghost Shade = new Ghost("Shade", EMFLevel5, GhostOrb, GhostWriting, getString(R.string.ShadeDesc));
-        Ghost Demon = new Ghost("Demon", SpiritBox, FreezingTemperatures, GhostWriting, getString(R.string.DemonDesc));
-        Ghost Yurei = new Ghost("Yurei", GhostOrb, FreezingTemperatures, GhostWriting, getString(R.string.YureiDesc));
-        Ghost Oni = new Ghost("Oni", EMFLevel5, SpiritBox, GhostWriting, getString(R.string.OniDesc));
-
-        ghostList.add(Spirit);
-        ghostList.add(Wraith);
-        ghostList.add(Phantom);
-        ghostList.add(Poltergeist);
-        ghostList.add(Banshees);
-        ghostList.add(Jinn);
-        ghostList.add(Mare);
-        ghostList.add(Revenant);
-        ghostList.add(Shade);
-        ghostList.add(Demon);
-        ghostList.add(Yurei);
-        ghostList.add(Oni);
-
-
-        possibleEvidenceList.add(EMFLevel5);
-        possibleEvidenceList.add(GhostOrb);
-        possibleEvidenceList.add(GhostWriting);
-        possibleEvidenceList.add(FreezingTemperatures);
-        possibleEvidenceList.add(SpiritBox);
-        possibleEvidenceList.add(Fingerprints);
-
-        imagesForScreenCreator();
-
+        intialSetup();
 
         Image1.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
@@ -334,6 +292,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void possibleGhostList() {
+
+
         if (evideneceCollected.size() == 1) {
             for (Ghost ghost : ghostList) {
                 if (ghost.getEvidence1().getEvidenceTitle().equals(selectedEvidence)) {
@@ -351,6 +311,8 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Ghost> newGhostList = new ArrayList<Ghost>();
         ArrayList<Evidence> evidenceToCycle = new ArrayList<Evidence>();
 
+
+
         if (evideneceCollected.size() >= 2) {
 
             for (Ghost ghost : possibleGhostList) {
@@ -365,6 +327,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             possibleGhostList.clear();
+
             possibleGhostList.addAll(newGhostList);
 
         }
@@ -381,12 +344,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void imagesForScreenCreator() {
+
         if (evideneceCollected.size() < 3) {
             if (possibleEvidenceList.size() > 0) {
 
 
                 for (int i = 0; i < possibleEvidenceList.size(); i++) {
                     Evidence evidence = possibleEvidenceList.get(i);
+
                     evideneTitlelist.add(evidence.getEvidenceTitle());
                     imageIdlist.add(evidence.getEvidenceImageId());
                 }
@@ -478,6 +443,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void actionTitleChanger() {
+
+        if (evideneceCollected.size() == 0) {
+            actionTitle.setText("Select your 1st evidence found");
+        }
+
         if (evideneceCollected.size() == 1) {
             actionTitle.setText("Select your 2nd evidence found");
         }
@@ -494,7 +464,14 @@ public class MainActivity extends AppCompatActivity {
         if (evideneceCollected.size() >= 1) {
             ghostImage.setVisibility(View.VISIBLE);
             possubleGhostTitle.setVisibility(View.VISIBLE);
+        }
 
+        if (evideneceCollected.isEmpty()){
+
+            ghostImage.setVisibility(View.GONE);
+            possubleGhostTitle.setVisibility(View.GONE);
+            Evidence1.setVisibility(View.GONE);
+            Evidence2.setVisibility(View.GONE);
         }
 
         if (evideneceCollected.size() >= 1) {
@@ -516,16 +493,60 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void intialSetup(){
+        Evidence EMFLevel5 = new Evidence("EMF Level 5", R.drawable.emf5);
+        Evidence GhostOrb = new Evidence("Ghost Orb", R.drawable.ghostorbs);
+        Evidence GhostWriting = new Evidence("Ghost Writing", R.drawable.ghostwriting);
+        Evidence FreezingTemperatures = new Evidence("Freezing Temperatures", R.drawable.freezing_tempt_info);
+        Evidence SpiritBox = new Evidence("Spirit Box", R.drawable.spirit_box);
+        Evidence Fingerprints = new Evidence("Fingerprints", R.drawable.fingerprints);
+
+        Ghost Spirit = new Ghost("Spirit", SpiritBox, Fingerprints, GhostWriting, getString(R.string.SpiritDesc));
+        Ghost Wraith = new Ghost("Wraith", SpiritBox, Fingerprints, FreezingTemperatures, getString(R.string.WraithDesc));
+        Ghost Phantom = new Ghost("Phantom", EMFLevel5, GhostOrb, FreezingTemperatures, getString(R.string.PhantomDesc));
+        Ghost Poltergeist = new Ghost("Poltergeist", SpiritBox, Fingerprints, GhostOrb, getString(R.string.PoltergeistDesc));
+        Ghost Banshees = new Ghost("Banshees", EMFLevel5, Fingerprints, FreezingTemperatures, getString(R.string.BansheesDesc));
+        Ghost Jinn = new Ghost("Jinn", SpiritBox, GhostOrb, EMFLevel5, getString(R.string.JinnDesc));
+        Ghost Mare = new Ghost("Mare", SpiritBox, GhostOrb, FreezingTemperatures, getString(R.string.MareDesc));
+        Ghost Revenant = new Ghost("Revenant", EMFLevel5, Fingerprints, GhostWriting, getString(R.string.RevenantDesc));
+        Ghost Shade = new Ghost("Shade", EMFLevel5, GhostOrb, GhostWriting, getString(R.string.ShadeDesc));
+        Ghost Demon = new Ghost("Demon", SpiritBox, FreezingTemperatures, GhostWriting, getString(R.string.DemonDesc));
+        Ghost Yurei = new Ghost("Yurei", GhostOrb, FreezingTemperatures, GhostWriting, getString(R.string.YureiDesc));
+        Ghost Oni = new Ghost("Oni", EMFLevel5, SpiritBox, GhostWriting, getString(R.string.OniDesc));
+
+        ghostList.clear();
+        ghostList.add(Spirit);
+        ghostList.add(Wraith);
+        ghostList.add(Phantom);
+        ghostList.add(Poltergeist);
+        ghostList.add(Banshees);
+        ghostList.add(Jinn);
+        ghostList.add(Mare);
+        ghostList.add(Revenant);
+        ghostList.add(Shade);
+        ghostList.add(Demon);
+        ghostList.add(Yurei);
+        ghostList.add(Oni);
+
+        possibleEvidenceList.clear();
+        possibleEvidenceList.add(EMFLevel5);
+        possibleEvidenceList.add(GhostOrb);
+        possibleEvidenceList.add(GhostWriting);
+        possibleEvidenceList.add(FreezingTemperatures);
+        possibleEvidenceList.add(SpiritBox);
+        possibleEvidenceList.add(Fingerprints);
+
+        imagesForScreenCreator();
+
+
+    }
 
     @Override
     public void onBackPressed() {
         // code here to show dialog
-        if (evideneceCollected.size() == 1) {
-            evideneceCollected.clear();
-            imagesForScreenCreator();
-        }
-
-
+        possibleGhostList.clear();
+        evideneceCollected.clear();
+        intialSetup();
         //super.onBackPressed();  // optional depending on your needs
     }
 
