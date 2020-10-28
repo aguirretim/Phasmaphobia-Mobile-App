@@ -49,7 +49,26 @@ public class PossibleGhostList extends AppCompatActivity implements GhostAdapter
 
         RecycleListView.setLayoutManager(new LinearLayoutManager(PossibleGhostList.this));
 
+        imageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Show the Screen you want to show
+                onBackPressed();
+
+            }
+        });
+
+        textView5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Show the Screen you want to show
+                onBackPressed();
+
+            }
+        });
+
     }
+
 
     private void findViews() {
         evidence1Text = (TextView) findViewById(R.id.evidence1Text);
@@ -92,6 +111,11 @@ public class PossibleGhostList extends AppCompatActivity implements GhostAdapter
 
     }
 
+    public void onBackPressed() {
+        // code here to show dialog
+
+        super.onBackPressed();  // optional depending on your needs
+    }
 
 }
 

@@ -1,5 +1,6 @@
 package com.example.phasmophobiamobilejournal.Viewcontrollers;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,6 +13,8 @@ import com.example.phasmophobiamobilejournal.classesforobjects.Evidence;
 import com.example.phasmophobiamobilejournal.classesforobjects.Ghost;
 
 import java.util.ArrayList;
+
+import static java.lang.Boolean.TRUE;
 
 public class GhostDetailPage extends AppCompatActivity {
 
@@ -38,7 +41,35 @@ public class GhostDetailPage extends AppCompatActivity {
         possibleEvidenceTextSet();
         remainingEvidenceGenerator();
 
+
+        ghostImageIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Show the Screen you want to show
+                onBackPressed();
+            }
+        });
+
+        returnToGhostListTXT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Show the Screen you want to show
+
+                Intent intent = new Intent(GhostDetailPage.this, MainActivity.
+                        class);
+                intent.putExtra("newGhostReset",TRUE);
+
+                onBackPressed();
+
+            }
+        });
+
+
+
     }
+
+
+
 
 
     private void findViews() {
@@ -117,6 +148,10 @@ public class GhostDetailPage extends AppCompatActivity {
         ghostEvidenceRemainText.setText(remainEvidenceString);
 
     }
+    public void onBackPressed() {
+        // code here to show dialog
 
+        super.onBackPressed();  // optional depending on your needs
+    }
 
 }

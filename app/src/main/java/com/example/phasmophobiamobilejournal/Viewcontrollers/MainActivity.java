@@ -19,6 +19,9 @@ import com.example.phasmophobiamobilejournal.classesforobjects.Ghost;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
+import static java.lang.Boolean.FALSE;
+import static java.lang.Boolean.TRUE;
+
 public class MainActivity extends AppCompatActivity {
 
     /*************************************
@@ -77,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
     String fifthTextRef;
     String sixthTextRef;
 
+    boolean newGhostReset = false;
+
     // create a new TableRow
     // TableRow row = new TableRow(this);
 
@@ -94,6 +99,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         intialSetup();
+        newGhostReset = getIntent().getBooleanExtra("newGhostReset",FALSE);
+        if (newGhostReset) {
+            onBackPressed();
+        }
 
         Image1.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
@@ -312,7 +321,6 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Evidence> evidenceToCycle = new ArrayList<Evidence>();
 
 
-
         if (evideneceCollected.size() >= 2) {
 
             for (Ghost ghost : possibleGhostList) {
@@ -466,7 +474,7 @@ public class MainActivity extends AppCompatActivity {
             possubleGhostTitle.setVisibility(View.VISIBLE);
         }
 
-        if (evideneceCollected.isEmpty()){
+        if (evideneceCollected.isEmpty()) {
 
             ghostImage.setVisibility(View.GONE);
             possubleGhostTitle.setVisibility(View.GONE);
@@ -493,7 +501,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void intialSetup(){
+    public void intialSetup() {
         Evidence EMFLevel5 = new Evidence("EMF Level 5", R.drawable.emf5);
         Evidence GhostOrb = new Evidence("Ghost Orb", R.drawable.ghostorbs);
         Evidence GhostWriting = new Evidence("Ghost Writing", R.drawable.ghostwriting);
@@ -544,10 +552,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         // code here to show dialog
+
+
         possibleGhostList.clear();
         evideneceCollected.clear();
+
         intialSetup();
         //super.onBackPressed();  // optional depending on your needs
+
     }
 
 }
