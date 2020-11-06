@@ -57,7 +57,7 @@ public class GhostDetailPage extends AppCompatActivity {
 
                 Intent intent = new Intent(GhostDetailPage.this, MainActivity.
                         class);
-                intent.putExtra("newGhostReset",TRUE);
+                intent.putExtra("newGhostReset", TRUE);
 
                 onBackPressed();
 
@@ -65,11 +65,7 @@ public class GhostDetailPage extends AppCompatActivity {
         });
 
 
-
     }
-
-
-
 
 
     private void findViews() {
@@ -125,16 +121,15 @@ public class GhostDetailPage extends AppCompatActivity {
         if (evideneceCollected.size() == 2) {
 
             evidenceToCycle = selectedGhost.getEvideneceForGhost();
-            if (!evidenceToCycle.get(0).getEvidenceTitle().contains(evideneceCollected.get(1))) {
+            if (!(evidenceToCycle.get(0).getEvidenceTitle().contains(evideneceCollected.get(1))) && (!evidenceToCycle.get(0).getEvidenceTitle().contains(evideneceCollected.get(0)))) {
                 remainEvidenceString = remainEvidenceString + evidenceToCycle.get(0).getEvidenceTitle() + "\n ";
             }
-            if (!evidenceToCycle.get(1).getEvidenceTitle().contains(evideneceCollected.get(1))) {
+            if (!evidenceToCycle.get(1).getEvidenceTitle().contains(evideneceCollected.get(1)) && (!evidenceToCycle.get(1).getEvidenceTitle().contains(evideneceCollected.get(0)))) {
                 remainEvidenceString = remainEvidenceString + evidenceToCycle.get(1).getEvidenceTitle() + "\n ";
             }
-            if (!evidenceToCycle.get(2).getEvidenceTitle().contains(evideneceCollected.get(1))) {
+            if (!evidenceToCycle.get(2).getEvidenceTitle().contains(evideneceCollected.get(1)) && (!evidenceToCycle.get(2).getEvidenceTitle().contains(evideneceCollected.get(0)))) {
                 remainEvidenceString = remainEvidenceString + evidenceToCycle.get(2).getEvidenceTitle() + "\n ";
             }
-
         }
 
         if (evideneceCollected.size() == 3) {
@@ -148,6 +143,7 @@ public class GhostDetailPage extends AppCompatActivity {
         ghostEvidenceRemainText.setText(remainEvidenceString);
 
     }
+
     public void onBackPressed() {
         // code here to show dialog
 

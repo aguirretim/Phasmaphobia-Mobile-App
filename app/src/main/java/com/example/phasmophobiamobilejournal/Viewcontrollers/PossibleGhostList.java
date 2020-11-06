@@ -43,7 +43,7 @@ public class PossibleGhostList extends AppCompatActivity implements GhostAdapter
 
         possibleEvidenceTextSet();
 
-        GhostAdapter = new GhostAdapter(possibleGhostArrayList, PossibleGhostList.this);
+        GhostAdapter = new GhostAdapter(evideneceCollected,possibleGhostArrayList, PossibleGhostList.this);
         GhostAdapter.setRecyclerClickListener(this);
         RecycleListView.setAdapter(GhostAdapter);
 

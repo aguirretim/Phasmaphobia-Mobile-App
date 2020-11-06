@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.phasmophobiamobilejournal.R;
 import com.example.phasmophobiamobilejournal.classesforobjects.Ghost;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GhostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -19,17 +20,20 @@ public class GhostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
      * initialized Variables for Object.  *
      **************************************/
 
+    private ArrayList<String> evideneceCollected = new ArrayList<String>();
     private List<Ghost> vlist;
     private Context vContext;
     private LayoutInflater vInflator;
     private Ghost vGhost;
     private GhostAdapter.RecyclerClickListener recyclerClickListener;
 
+
     /****************************
      * Constructor for Object.  *
      ****************************/
 
-    public GhostAdapter(List<Ghost> vlist, Context vContext) {
+    public GhostAdapter(ArrayList<String> evideneceCollected, List<Ghost> vlist, Context vContext) {
+        this.evideneceCollected = evideneceCollected;
         this.vlist = vlist;
         this.vContext = vContext;
         this.vInflator = LayoutInflater.from(vContext);
@@ -59,7 +63,54 @@ public class GhostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         GhostAdapter.ViewHolder ViewHolder = (GhostAdapter.ViewHolder) holder;
         vGhost = vlist.get(position);
         ViewHolder.ghostNameId.setText(vGhost.getGhostName());
-        ViewHolder.evidenceneededText.setText(vGhost.getEvidence1().getEvidenceTitle() + ", " + vGhost.getEvidence2().getEvidenceTitle() + ", " + vGhost.getEvidence3().getEvidenceTitle());
+
+        String Evidence1, Evidence2, Evidence3;
+        Evidence1 = "";
+        if (evideneceCollected.size() >= 1) {
+            Evidence1 = evideneceCollected.get(0);
+        }
+
+        Evidence2 = "";
+        if (evideneceCollected.size() >= 2) {
+            Evidence2 = evideneceCollected.get(1);
+        }
+
+        Evidence3 = "";
+        if (evideneceCollected.size() >= 3) {
+            Evidence3 = evideneceCollected.get(2);
+        }
+
+        String GhostEvidence1 = vGhost.getEvidence1().getEvidenceTitle() + ", ";
+        String GhostEvidence2 = vGhost.getEvidence2().getEvidenceTitle() + ", ";
+        String GhostEvidence3 = vGhost.getEvidence3().getEvidenceTitle();
+
+
+        if (!(Evidence1.contentEquals(vGhost.getEvidence1().getEvidenceTitle())) &&
+                !(Evidence2.contentEquals(vGhost.getEvidence1().getEvidenceTitle())) &&
+                !(Evidence3.contentEquals(vGhost.getEvidence1().getEvidenceTitle()))
+        ) {
+            GhostEvidence1 = vGhost.getEvidence1().getEvidenceTitle() + ", ";
+        } else {
+            GhostEvidence1 = "";
+        }
+        if (!(Evidence1.contentEquals(vGhost.getEvidence2().getEvidenceTitle())) &&
+                !(Evidence2.contentEquals(vGhost.getEvidence2().getEvidenceTitle())) &&
+                !(Evidence3.contentEquals(vGhost.getEvidence2().getEvidenceTitle()))) {
+            GhostEvidence2 = vGhost.getEvidence2().getEvidenceTitle() + ", ";
+        } else {
+            GhostEvidence2 = "";
+        }
+        if (!(Evidence1.contentEquals(vGhost.getEvidence3().getEvidenceTitle())) &&
+                !(Evidence2.contentEquals(vGhost.getEvidence3().getEvidenceTitle())) &&
+                !(Evidence3.contentEquals(vGhost.getEvidence3().getEvidenceTitle()))) {
+            GhostEvidence3 = vGhost.getEvidence3().getEvidenceTitle();
+        } else {
+            GhostEvidence3 = "";
+        }
+
+
+        ViewHolder.evidenceneededText.setText(GhostEvidence1 +
+                GhostEvidence2 + GhostEvidence3);
 
 
     }
