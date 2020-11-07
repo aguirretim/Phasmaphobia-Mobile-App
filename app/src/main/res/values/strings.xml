@@ -27,7 +27,7 @@
         A Shade is considered to be a "shy ghost.” It will not attack if there are multiple people nearby, but that also means it is harder to find in larger groups. \n\nUnique Strengths: Extremely shy, making it hard to find and detect. \n\nWeaknesses: Will not hunt if players are in a group.
     </string>
     <string name="DemonDesc">
-        A Demon is one of the worst ghosts to encounter. Highly aggressive, it will attack more often than any other ghost, so a crucifix is recommended to prevent hunts. However, it will also allow ghost hunters to use the Ouija Board without a major hit to their sanity. \n\nUnique Strengths: One of the most dangerous ghosts. Extremely aggressive and hunts very often. Weakness: Using the Ouija board to ask questions doesn’t drain sanity.
+        A Demon is one of the worst ghosts to encounter. Highly aggressive, it will attack more often than any other ghost, so a crucifix is recommended to prevent hunts. However, it will also allow ghost hunters to use the Ouija Board without a major hit to their sanity. \n\nUnique Strengths: One of the most dangerous ghosts. Extremely aggressive and hunts very often. \n\nWeaknesses: Using the Ouija board to ask questions doesn’t drain sanity.
     </string>
     <string name="YureiDesc">
         A Yurei is a type of ghost that has the ability to drain the player\'s sanity quicker than any other ghost. Smudging the room the Yurei was found in will prevent it from wandering from the location for a long time. \n\nUnique Strengths: Drains player sanity especially quickly. \n\nWeaknesses: Using a smudge stick in the same room will stop the Yurei from moving.

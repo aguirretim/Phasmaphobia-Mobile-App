@@ -1,7 +1,10 @@
 package com.example.phasmophobiamobilejournal.Viewcontrollers;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.SpannableStringBuilder;
+import android.text.style.StyleSpan;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,7 +16,9 @@ import com.example.phasmophobiamobilejournal.classesforobjects.Evidence;
 import com.example.phasmophobiamobilejournal.classesforobjects.Ghost;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
+import static android.text.Spanned.SPAN_INCLUSIVE_INCLUSIVE;
 import static java.lang.Boolean.TRUE;
 
 public class GhostDetailPage extends AppCompatActivity {
@@ -28,6 +33,8 @@ public class GhostDetailPage extends AppCompatActivity {
     private TextView ghostEvidenceRemainText;
     private Ghost selectedGhost;
     ArrayList<String> evideneceCollected = new ArrayList<String>();
+    ArrayList<String> selectedGhostArray = new ArrayList<String>();
+    ArrayList<String> descriptionTextToBold = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +42,16 @@ public class GhostDetailPage extends AppCompatActivity {
         setContentView(R.layout.ghost_detail_page);
         findViews();
         selectedGhost = (Ghost) getIntent().getExtras().get("selectedGhost");
-        descriptionTitleText.setText("Based on the evidence you selected. The ghost could be a " + selectedGhost.getGhostName());
-        ghostDescText.setText(selectedGhost.getGhostDescription());
+
+        selectedGhostArray.add(selectedGhost.getGhostName());
+
+
+        descriptionTitleText.setText(emboldenKeywords("Based on the evidence you selected. The ghost could be a " + selectedGhost.getGhostName(), selectedGhostArray));
+
+        descriptionTextToBold.add("Unique Strengths");
+        descriptionTextToBold.add("Weaknesses");
+
+        ghostDescText.setText(emboldenKeywords(selectedGhost.getGhostDescription(), descriptionTextToBold));
         evideneceCollected = getIntent().getStringArrayListExtra("evideneceCollected");
         possibleEvidenceTextSet();
         remainingEvidenceGenerator();
@@ -101,7 +116,9 @@ public class GhostDetailPage extends AppCompatActivity {
     public void remainingEvidenceGenerator() {
 
         String remainEvidenceString;
+        descriptionTextToBold.add("Needed evidence to confirm:");
         remainEvidenceString = "Needed evidence to confirm:\n ";
+
         ArrayList<Evidence> evidenceToCycle = new ArrayList<Evidence>();
         if (evideneceCollected.size() == 1) {
 
@@ -140,7 +157,7 @@ public class GhostDetailPage extends AppCompatActivity {
 
         }
 
-        ghostEvidenceRemainText.setText(remainEvidenceString);
+        ghostEvidenceRemainText.setText(emboldenKeywords(remainEvidenceString, descriptionTextToBold));
 
     }
 
@@ -150,4 +167,33 @@ public class GhostDetailPage extends AppCompatActivity {
         super.onBackPressed();  // optional depending on your needs
     }
 
+    private static SpannableStringBuilder emboldenKeywords(final String text,
+                                                           final ArrayList<String> searchKeywords) {
+        // searching in the lower case text to make sure we catch all cases
+        final String loweredMasterText = text.toLowerCase(Locale.ENGLISH);
+        final SpannableStringBuilder span = new SpannableStringBuilder(text);
+
+        // for each keyword
+        for (final String keyword : searchKeywords) {
+            // lower the keyword to catch both lower and upper case chars
+            final String loweredKeyword = keyword.toLowerCase(Locale.ENGLISH);
+
+            // start at the beginning of the master text
+            int offset = 0;
+            int start;
+            final int len = keyword.length(); // let's calculate this outside the 'while'
+
+            while ((start = loweredMasterText.indexOf(loweredKeyword, offset)) >= 0) {
+                // make it bold
+                span.setSpan(new StyleSpan(Typeface.BOLD), start, start + len, SPAN_INCLUSIVE_INCLUSIVE);
+                // move your offset pointer
+                offset = start + len;
+            }
+        }
+
+        // put it in your TextView and smoke it!
+        return span;
+    }
+
 }
+
