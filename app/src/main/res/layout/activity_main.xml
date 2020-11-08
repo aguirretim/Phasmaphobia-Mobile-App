@@ -9,6 +9,7 @@
     android:backgroundTintMode="src_over"
     tools:context=".Viewcontrollers.MainActivity">
 
+
     <TextView
         android:id="@+id/action_Title"
         android:layout_width="wrap_content"
@@ -219,7 +220,8 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/possubleGhostTitle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ghosticon" />
+        app:srcCompat="@drawable/ghosticon"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/possubleGhostTitle"
@@ -233,5 +235,22 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/ghostImage"
         app:layout_constraintStart_toStartOf="@+id/ghostImage" />
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#C38D4C"
+        android:text="Reset Evidence Button"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ghosticon"
+        tools:visibility="visible" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -190,7 +190,6 @@ public class GhostDetailPage extends AppCompatActivity {
                 offset = start + len;
             }
         }
-
         // put it in your TextView and smoke it!
         return span;
     }

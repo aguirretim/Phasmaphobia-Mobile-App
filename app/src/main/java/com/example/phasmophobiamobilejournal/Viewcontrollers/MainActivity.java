@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -20,7 +21,6 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 import static java.lang.Boolean.FALSE;
-import static java.lang.Boolean.TRUE;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView Evidence3;
     private ImageView ghostImage;
     private TextView possubleGhostTitle;
+    private Button resetButton;
 
 
     /*************************************
@@ -99,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         intialSetup();
-        newGhostReset = getIntent().getBooleanExtra("newGhostReset",FALSE);
+        newGhostReset = getIntent().getBooleanExtra("newGhostReset", FALSE);
         if (newGhostReset) {
             onBackPressed();
         }
@@ -226,6 +227,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
 
     }
 
@@ -259,6 +267,7 @@ public class MainActivity extends AppCompatActivity {
         Evidence3 = (TextView) findViewById(R.id.Evidence3);
         ghostImage = (ImageView) findViewById(R.id.ghostImage);
         possubleGhostTitle = (TextView) findViewById(R.id.possubleGhostTitle);
+        resetButton = (Button) findViewById(R.id.resetButton);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -472,6 +481,7 @@ public class MainActivity extends AppCompatActivity {
         if (evideneceCollected.size() >= 1) {
             ghostImage.setVisibility(View.VISIBLE);
             possubleGhostTitle.setVisibility(View.VISIBLE);
+            resetButton.setVisibility(View.VISIBLE);
         }
 
         if (evideneceCollected.isEmpty()) {
@@ -480,6 +490,7 @@ public class MainActivity extends AppCompatActivity {
             possubleGhostTitle.setVisibility(View.GONE);
             Evidence1.setVisibility(View.GONE);
             Evidence2.setVisibility(View.GONE);
+            resetButton.setVisibility(View.GONE);
         }
 
         if (evideneceCollected.size() >= 1) {
