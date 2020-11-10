@@ -349,7 +349,9 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+
         if (evideneceCollected.size() == 3) {
+
             Intent intent = new Intent(MainActivity.this, GhostDetailPage.
                     class);
             intent.putExtra("selectedGhost", possibleGhostList.get(0));
@@ -358,6 +360,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
 
         }
+
+
     }
 
     public void imagesForScreenCreator() {
@@ -457,6 +461,8 @@ public class MainActivity extends AppCompatActivity {
 
         evideneTitlelist.clear();
         imageIdlist.clear();
+
+
     }
 
     public void actionTitleChanger() {
@@ -507,6 +513,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onResume() {
+
+        if (evideneceCollected.size() == 3) {
+            onBackPressed();
+        }
+
         super.onResume();
 
 
