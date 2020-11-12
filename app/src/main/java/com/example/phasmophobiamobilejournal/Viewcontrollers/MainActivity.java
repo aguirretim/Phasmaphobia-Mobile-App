@@ -1,5 +1,6 @@
 package com.example.phasmophobiamobilejournal.Viewcontrollers;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -9,8 +10,10 @@ import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.phasmophobiamobilejournal.R;
@@ -83,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
     boolean newGhostReset = false;
 
+
     // create a new TableRow
     // TableRow row = new TableRow(this);
 
@@ -94,12 +98,46 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         setContentView(R.layout.activity_main);
         // Assigns the Views from the layout file to the corresponding variables.
         findViews();
 
 
         intialSetup();
+
+        Boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                .getBoolean("isFirstRun", true);
+
+
+
+
+
+        if (isFirstRun) {
+            //show start activity
+            // 1. Instantiate an <code><a href="/reference/android/app/AlertDialog.Builder.html">AlertDialog.Builder</a></code> with its constructor
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+            // 2. Chain together various setter methods to set the dialog characteristics
+            builder.setMessage("I made this app to help Ghost Hunters, who play the game Phasmaphobia, more easily find the ghost. This Mobile Journal acts similar to the one in the game but eliminates evidence as you see it making it easier to narrow down the ghost.")
+                    .setTitle("Welcome Ghost Hunter");
+
+            // 3. Get the <code><a href="/reference/android/app/AlertDialog.html">AlertDialog</a></code> from <code><a href="/reference/android/app/AlertDialog.Builder.html#create()">create()</a></code>
+            AlertDialog dialog = builder.create();
+
+            dialog.show();
+
+           // startActivity(new Intent(MainActivity.this, FirstLaunch.class));
+           /* Toast.makeText(MainActivity.this, "First Run", Toast.LENGTH_LONG)
+                    .show();*/
+        }
+
+
+        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                .putBoolean("isFirstRun", false).commit();
+
+
+
         newGhostReset = getIntent().getBooleanExtra("newGhostReset", FALSE);
         if (newGhostReset) {
             onBackPressed();
