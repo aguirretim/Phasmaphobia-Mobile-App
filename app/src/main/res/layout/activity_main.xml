@@ -45,6 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scaleType="fitCenter"
+
                 app:srcCompat="@drawable/emf5" />
 
 

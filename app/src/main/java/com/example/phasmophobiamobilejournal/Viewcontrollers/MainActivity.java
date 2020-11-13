@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
             // 2. Chain together various setter methods to set the dialog characteristics
-            builder.setMessage("I made this app to help Ghost Hunters, who play the game Phasmaphobia, more easily find the ghost. This Mobile Journal acts similar to the one in the game but eliminates evidence as you see it making it easier to narrow down the ghost.")
+            builder.setMessage("I made this app to help those who play the game Phasmaphobia, more easily find the ghost. This Mobile Journal acts similar to the one in the game but eliminates evidence as you see it making it easier to narrow down the ghost.")
                     .setTitle("Welcome Ghost Hunter");
 
             // 3. Get the <code><a href="/reference/android/app/AlertDialog.html">AlertDialog</a></code> from <code><a href="/reference/android/app/AlertDialog.Builder.html#create()">create()</a></code>
@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
-                .putBoolean("isFirstRun", false).commit();
+                .putBoolean("isFirstRun", false).apply();
 
 
 
