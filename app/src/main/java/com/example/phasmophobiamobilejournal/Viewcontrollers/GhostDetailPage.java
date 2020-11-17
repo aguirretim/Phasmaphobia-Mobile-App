@@ -150,7 +150,7 @@ public class GhostDetailPage extends AppCompatActivity {
         }
 
         if (evideneceCollected.size() == 3) {
-            descriptionTitleText.setText("Based on the evidence you selected The ghost is a " + selectedGhost.getGhostName());
+            descriptionTitleText.setText(emboldenKeywords("Based on the evidence you selected The ghost is a " + selectedGhost.getGhostName(),selectedGhostArray));
             returnToGhostListTXT.setText("Reset and Return to \nHunting More Ghost");
             ghostImageIcon.setImageDrawable(getResources().getDrawable(R.drawable.ghostinspecticon));
             ghostEvidenceRemainText.setVisibility(View.GONE);
