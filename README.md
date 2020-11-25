@@ -13,8 +13,6 @@ The main feature of this App is to dynamically allow a player to more quickly id
 
 Some future feature goals are to implement a timer for the difficulty and a ghost phrases generator.
 
-![Phasmaphobia-Mobile-App](https://i.imgur.com/f06oqMV.png "Phasmaphobia Mobile App")
-
 Phasmophobia Mobile App (Ghost Journal) is currently only available on [Android](https://play.google.com/store/apps/details?id=com.TimApps.phasmophobiamobilejournal) 
 
 ![Phasmophobia Screenshots](https://i.imgur.com/9CAVMow.png "Phasmophobia Screenshots")
