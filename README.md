@@ -16,7 +16,7 @@ Some future feature goals are to implement a timer for difficulty and ghost phra
 
 ![Phasmaphobia-Mobile-App](https://i.imgur.com/f06oqMV.png "Phasmaphobia Mobile App")
 
-Phasmaphobia Mobile App (Ghost Jounal) is currently only available on [Android](https://play.google.com/store/apps/details?id=com.phasmophobiacompanion) 
+Phasmaphobia Mobile App (Ghost Jounal) is currently only available on [Android](https://play.google.com/store/apps/details?id=com.TimApps.phasmophobiamobilejournal 
 
 ![Phasmophobia Screenshots](https://i.imgur.com/9CAVMow.png "Phasmophobia Screenshots")
 
