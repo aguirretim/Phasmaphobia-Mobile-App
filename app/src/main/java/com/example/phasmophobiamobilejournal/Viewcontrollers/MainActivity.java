@@ -1,6 +1,5 @@
 package com.example.phasmophobiamobilejournal.Viewcontrollers;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -10,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
@@ -110,9 +108,6 @@ public class MainActivity extends AppCompatActivity {
                 .getBoolean("isFirstRun", true);
 
 
-
-
-
         if (isFirstRun) {
             //show start activity
             // 1. Instantiate an <code><a href="/reference/android/app/AlertDialog.Builder.html">AlertDialog.Builder</a></code> with its constructor
@@ -127,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
 
             dialog.show();
 
-           // startActivity(new Intent(MainActivity.this, FirstLaunch.class));
+            // startActivity(new Intent(MainActivity.this, FirstLaunch.class));
            /* Toast.makeText(MainActivity.this, "First Run", Toast.LENGTH_LONG)
                     .show();*/
         }
@@ -135,7 +130,6 @@ public class MainActivity extends AppCompatActivity {
 
         getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
                 .putBoolean("isFirstRun", false).apply();
-
 
 
         newGhostReset = getIntent().getBooleanExtra("newGhostReset", FALSE);
@@ -581,6 +575,8 @@ public class MainActivity extends AppCompatActivity {
         Ghost Demon = new Ghost("Demon", SpiritBox, FreezingTemperatures, GhostWriting, getString(R.string.DemonDesc));
         Ghost Yurei = new Ghost("Yurei", GhostOrb, FreezingTemperatures, GhostWriting, getString(R.string.YureiDesc));
         Ghost Oni = new Ghost("Oni", EMFLevel5, SpiritBox, GhostWriting, getString(R.string.OniDesc));
+        Ghost Yokai = new Ghost("Yokai", GhostOrb, SpiritBox, GhostWriting, getString(R.string.YokaiDesc));
+        Ghost Hantu = new Ghost("Hantu", Fingerprints, GhostOrb, GhostWriting, getString(R.string.HantuDesc));
 
         ghostList.clear();
         ghostList.add(Spirit);
@@ -595,6 +591,8 @@ public class MainActivity extends AppCompatActivity {
         ghostList.add(Demon);
         ghostList.add(Yurei);
         ghostList.add(Oni);
+        ghostList.add(Yokai);
+        ghostList.add(Hantu);
 
         possibleEvidenceList.clear();
         possibleEvidenceList.add(EMFLevel5);

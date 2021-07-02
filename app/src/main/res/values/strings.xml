@@ -34,4 +34,9 @@
     </string>
     <string name="OniDesc">An Oni is a very active ghost and it’s likely that it will show itself within the first few minutes of the game. It’s also likely to wander around near the ghost room. It’s recommended to hide in a closet and wait for it to leave. \n\nUnique Strengths: Extremely active and moves objects quickly. \n\nWeaknesses: Extreme activity with lots of players nearby makes it easy to identify.
     </string>
+    <string name="YokaiDesc">A common type of ghost that is attracted to human voices. They can usually be found haunting family homes. \n\nUnique Strengths: Talking near a Yokai will anger it and cause it to attack more often.
+\n\nWeaknesses: While hunting, it can only hear voices close to it.
+    </string>
+    <string name="HantuDesc">A rare ghost that can be found in hot climates. They are known to attack more often in cold weather. \n\nUnique Strengths: Moves faster in colder areas. \n\nWeaknesses: Moves slower in warmer areas.
+    </string>
 </resources>
