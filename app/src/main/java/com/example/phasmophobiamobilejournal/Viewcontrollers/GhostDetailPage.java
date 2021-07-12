@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
+import android.text.method.ScrollingMovementMethod;
 import android.text.style.StyleSpan;
 import android.view.View;
 import android.widget.ImageView;
@@ -50,12 +51,14 @@ public class GhostDetailPage extends AppCompatActivity {
 
         descriptionTextToBold.add("Unique Strengths");
         descriptionTextToBold.add("Weaknesses");
+        descriptionTextToBold.add("Tips & Tricks");
 
         ghostDescText.setText(emboldenKeywords(selectedGhost.getGhostDescription(), descriptionTextToBold));
         evideneceCollected = getIntent().getStringArrayListExtra("evideneceCollected");
         possibleEvidenceTextSet();
         remainingEvidenceGenerator();
 
+        ghostDescText.setMovementMethod(new ScrollingMovementMethod());
 
         ghostImageIcon.setOnClickListener(new View.OnClickListener() {
             @Override

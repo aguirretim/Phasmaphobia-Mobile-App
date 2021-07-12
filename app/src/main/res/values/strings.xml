@@ -2,41 +2,74 @@
     <string name="app_name">Ghost Journal</string>
 
     <string name="SpiritDesc">A Spirit is the most common Ghost you will come across, however it is still very powerful and dangerous. They are usually discovered at one of their hunting grounds after an unexplained death.
-        \n\nUnique Strengths: Nothing \n\nWeaknesses: Using Smudge Sticks on a Spirit will stop it from attacking for a long period of time.</string>
+        \n\nUnique Strengths: Nothing \n\nWeaknesses: Using Smudge Sticks on a Spirit will stop it from attacking for a long period of time.
+        \n\nTips &amp; Tricks
+\n\n\u2022 Spirits, when smudged, are repelled for 180 seconds or about 3 minutes compared to other ghosts, which are typically repelled for 90 seconds 1 min and 30 sec. </string>
     <string name="WraithDesc">A Wraith is one of the most dangerous Ghosts you will find. It is also the only known Ghost that has the ability of flight and has sometimes been known to travel through walls. \n\nUnique Strengths: Wraiths almost never touch the ground meaning it can\'t be tracked by footsteps. \n\nWeaknesses: Wraiths have a toxic reaction to salt.
+        \n\nTips &amp; Tricks
+\n\n\u2022 Wraiths can go through walls outside of hunts but not during hunts.
+        \n\n\u2022 Wraiths can teleport to a random player\'s location.
+\n\n\u2022 Wraiths can disturb salt piles but will not leave footprints (which are detected by UV light.
+\n\n\u2022 When a Wraith steps in salt, its activity level increases for about 10 seconds.
     </string>
     <string name="PhantomDesc">
-        A Phantom is a Ghost that can possess the living, most commonly summoned by a Ouija Board. It also induces fear into those around it. \n\nUnique Strengths: Looking at a Phantom will considerably drop your sanity. \n\nWeaknesses: Taking a photo of the Phantom will make it temporarily disappear.
+        A Phantom is a Ghost that can possess the living, most commonly summoned by a Ouija Board. It also induces fear into those around it. \n\nUnique Strengths: Looking at a Phantom will considerably drop your sanity. \n\nWeaknesses: Taking a photo of the Phantom will make it temporarily disappear. \n\nTips &amp; Tricks
+\n\n\u2022Phantoms Can wander to a random player\'s location anywhere on the map.
+\n\n\u2022 Sanity drops twice as fast when looking at a Phantom.
+\n\n\u2022 If you take a Phantom photo, the ghost itself will not appear in the image.
+        \n\n \u2022Ghost Not appearing in the pictures can help you identify that what you\'re dealing with is a phantom as it\'s the only ghost that can do this.
+\n\n \u2022 During a hunt, a Phantom will flash visible every 1 to 2 seconds instead of every 0.3 to 1 second for other ghosts, making it harder to take a photo of it.
     </string>
-    <string name="PoltergeistDesc">One of the most famous Ghosts, a Poltergeist, also known as a noisy ghost can manipulate objects around it to spread fear into its victims. \n\nUnique Strengths: A Poltergeist can throw huge amounts of objects at once. \n\nWeaknesses: Rooms clear of any movable objects.
+    <string name="PoltergeistDesc" formatted="false">One of the most famous Ghosts, a Poltergeist, also known as a noisy ghost can manipulate objects around it to spread fear into its victims. \n\nUnique Strengths: A Poltergeist can throw huge amounts of objects at once. \n\nWeaknesses: Rooms clear of any movable objects. \n\nTips &amp; Tricks
+\n\n\u2022  If you\'re within line of sight of items being thrown by a Poltergeist. You will lose sanity equal to the number of items thrown times 2.
+\n\nFor example:
+\n(thrown items x 2 = % sanity lost)
+\n2 forks being thrown x 2 = 4% sanity lost
     </string>
     <string name="BansheesDesc">
-        Banshees are the ghosts that react the strongest to a Crucifix out of all the ghosts in the game. They will attempt to slowly stalk and pick off the ghost hunters one by one. \n\nUnique Strengths: Only targets one specific player at a time each time it hunts, putting the targeted player in much greater danger. \n\nWeaknesses: Hates the Crucifix, making it especially effective.
+        Banshees are the ghosts that react the strongest to a Crucifix out of all the ghosts in the game. They will attempt to slowly stalk and pick off the ghost hunters one by one. \n\nUnique Strengths: Only targets one specific player at a time each time it hunts, putting the targeted player in much greater danger. \n\nWeaknesses: Hates the Crucifix, making it especially effective.\n\nTips &amp; Tricks
+\n\n\u2022 A Banshee, when targeting a player, will aggressively hunt that target while in the building. But if that player is not in the building, it will hunt players like a normal ghost.
+\n\n\u2022 Banshees have an ability that lets them wander near their target and will go into hunt mode for 20 seconds if they are in the line of sight.
+\n\n\u2022 Banshees can initiate a hunt as soon as players enter the building if their target is inside, ignoring sanity levels and typical ghost hunting logic.
     </string>
     <string name="JinnDesc">
          A Jinn is a territorial Ghost that will attack when threatened. It has also been known to be able to travel at high speeds, and will do so while hunting distant paranormal investigators. However, cutting off a location\'s power via the breaker box will limit its speed.
-        \n\nUnique Strengths: The Jinn moves faster the further away a target is from it. \n\nWeaknesses: Cutting off the location\'s power supply will limit the Jinn\'s speed.
+        \n\nUnique Strengths: The Jinn moves faster the further away a target is from it. \n\nWeaknesses: Cutting off the location\'s power supply will limit the Jinn\'s speed. \n\nTips &amp; Tricks
+\n\n\u2022  Turn off the breaker to disable Jinns, ghost powers.
+\n\n\u2022  Jinns have a 25% chance to drop a player\'s sanity if they are within 3 meters.
+\n\n\u2022 Jinns slow down when they get within 4 meters of you.
     </string>
-    <string name="MareDesc">
-        A Mare is a ghost that attacks primarily in the dark. Thus, keeping the lights on and remaining out of dark areas will lower its aggression, but beware as it will attempt to turn the lights off so it may hunt. \n\nUnique Strengths: Attacks more frequently in the dark, with a tendency to switch off lights by itself. \n\nWeaknesses: Keeping the lights on.
+    <string name="MareDesc" formatted="false">
+        A Mare is a ghost that attacks primarily in the dark. Thus, keeping the lights on and remaining out of dark areas will lower its aggression, but beware as it will attempt to turn the lights off so it may hunt. \n\nUnique Strengths: Attacks more frequently in the dark, with a tendency to switch off lights by itself. \n\nWeaknesses: Keeping the lights on. \n\nTips &amp; Tricks
+\n\n\u2022 Mares can only hunt when sanity is below 40% if the lights in the current room are turned on.
+\n\n\u2022 If the lights are turned off, Mares can hunt at sanity 60% and below.
+\n\n\u2022 It is best to turn on lights in and near the ghost room to lower the hunting threshold of Mares.
     </string>
-    <string name="RevenantDesc">
-        A Revenant is a ghost that can attack indiscriminately regardless of sanity levels when hunting. Hiding from the Revenant will cause it to move slowly, but will travel faster than any other ghost in the game if it\'s hunting a victim. \n\nUnique Strengths: Attacks anyone, regardless of sanity levels; can switch targets at any given time when hunting. \n\nWeaknesses: Moves extremely slowly when players hide.
+    <string name="RevenantDesc" >
+        A Revenant is a ghost that can attack indiscriminately regardless of sanity levels when hunting. Hiding from the Revenant will cause it to move slowly, but will travel faster than any other ghost in the game if it\'s hunting a victim. \n\nUnique Strengths: Attacks anyone, regardless of sanity levels; can switch targets at any given time when hunting. \n\nWeaknesses: Moves extremely slowly when players hide. \n\nTips &amp; Tricks
+\n\n\u2022 You can try and track the speed of a ghost through video cameras to observe the ghost\'s speed to see if it\'s a Revenant.
+\n\n\u2022 You can also sacrifice/delegate a fellow ghost hunter to see and investigate its speed more during a hunt.
     </string>
     <string name="ShadeDesc">
-        A Shade is considered to be a "shy ghost.” It will not attack if there are multiple people nearby, but that also means it is harder to find in larger groups. \n\nUnique Strengths: Extremely shy, making it hard to find and detect. \n\nWeaknesses: Will not hunt if players are in a group.
+        A Shade is considered to be a "shy ghost.” It will not attack if there are multiple people nearby, but that also means it is harder to find in larger groups. \n\nUnique Strengths: Extremely shy, making it hard to find and detect. \n\nWeaknesses: Will not hunt if players are in a group. \n\nTips &amp; Tricks
+\n\u2022 Shades have a VERY LOW chance of hunting when multiple people are nearby, but it's not impossible.
+        \n\u2022 It is always best to gain activity on shades by having someone go in alone.
     </string>
     <string name="DemonDesc">
         A Demon is one of the worst ghosts to encounter. Highly aggressive, it will attack more often than any other ghost, so a crucifix is recommended to prevent hunts. However, it will also allow ghost hunters to use the Ouija Board without a major hit to their sanity. \n\nUnique Strengths: One of the most dangerous ghosts. Extremely aggressive and hunts very often. \n\nWeaknesses: Using the Ouija board to ask questions doesn’t drain sanity.
     </string>
     <string name="YureiDesc">
-        A Yurei is a type of ghost that has the ability to drain the player\'s sanity quicker than any other ghost. Smudging the room the Yurei was found in will prevent it from wandering from the location for a long time. \n\nUnique Strengths: Drains player sanity especially quickly. \n\nWeaknesses: Using a smudge stick in the same room will stop the Yurei from moving.
+        A Yurei is a type of ghost that has the ability to drain the player\'s sanity quicker than any other ghost. Smudging the room the Yurei was found in will prevent it from wandering from the location for a long time. \n\nUnique Strengths: Drains player sanity especially quickly. \n\nWeaknesses: Using a smudge stick in the same room will stop the Yurei from moving.\n\nTips &amp; Tricks
+\n\n\u2022 Yureis can drain sanity during hunts if you are within 10 meters
+
     </string>
     <string name="OniDesc">An Oni is a very active ghost and it’s likely that it will show itself within the first few minutes of the game. It’s also likely to wander around near the ghost room. It’s recommended to hide in a closet and wait for it to leave. \n\nUnique Strengths: Extremely active and moves objects quickly. \n\nWeaknesses: Extreme activity with lots of players nearby makes it easy to identify.
     </string>
     <string name="YokaiDesc">A common type of ghost that is attracted to human voices. They can usually be found haunting family homes. \n\nUnique Strengths: Talking near a Yokai will anger it and cause it to attack more often.
-\n\nWeaknesses: While hunting, it can only hear voices close to it.
+\n\nWeaknesses: While hunting, it can only hear voices close to it.\n\nTips &amp; Tricks
+\n\n\u2022 Average hearing distance for a Yokai is approximately 2 meters
     </string>
-    <string name="HantuDesc">A rare ghost that can be found in hot climates. They are known to attack more often in cold weather. \n\nUnique Strengths: Moves faster in colder areas. \n\nWeaknesses: Moves slower in warmer areas.
+    <string name="HantuDesc">A rare ghost that can be found in hot climates. They are known to attack more often in cold weather. \n\nUnique Strengths: Moves faster in colder areas. \n\nWeaknesses: Moves slower in warmer areas.\n\nTips &amp; Tricks
+\n\n\u2022 Keeping the breaker on will slow the Hantu down as it keeps the house warm.
     </string>
 </resources>
