@@ -47,8 +47,11 @@ public class MainActivity extends AppCompatActivity {
     private ImageView spiritBoxImage;
     private ImageView fingerprintImage;
     private TableRow evdTbRow31;
+    private TableRow evdTbRow32;
     private TextView spiritBoxText;
     private TextView fingerprintText;
+    private ImageView dotsProjectorImage;
+    private TextView dotsProjectorText;
     private TextView Evidence1;
     private TextView Evidence2;
     private TextView Evidence3;
@@ -75,12 +78,14 @@ public class MainActivity extends AppCompatActivity {
     int fourthImage;
     int fifthImage;
     int sixthImage;
+    int seventhImage;
     String firstTextRef;
     String secoundTextRef;
     String thirdTextRef;
     String fourthTextRef;
     String fifthTextRef;
     String sixthTextRef;
+    String seventhTextRef;
 
     boolean newGhostReset = false;
 
@@ -245,6 +250,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        dotsProjectorImage.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onClick(View view) {
+
+                selectedEvidence = "" + dotsProjectorText.getText();
+                evideneceCollected.add(selectedEvidence);
+
+                possibleGhostList();
+
+                possibleEvidenceList = possibleEvidenceCreator();
+
+                imagesForScreenCreator();
+
+
+            }
+        });
 
         ghostImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -258,6 +280,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
 
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -291,7 +315,10 @@ public class MainActivity extends AppCompatActivity {
         evdTbRow3 = (TableRow) findViewById(R.id.evdTbRow3);
         spiritBoxImage = (ImageView) findViewById(R.id.spiritBoxImage);
         fingerprintImage = (ImageView) findViewById(R.id.fingerprintImage);
+        dotsProjectorImage = (ImageView) findViewById(R.id.dotsProjectorImage);
+        dotsProjectorText = (TextView) findViewById(R.id.dotsProjectorText);
         evdTbRow31 = (TableRow) findViewById(R.id.evdTbRow31);
+        evdTbRow32 = (TableRow) findViewById(R.id.evdTbRow32);
         spiritBoxText = (TextView) findViewById(R.id.spiritBoxText);
         fingerprintText = (TextView) findViewById(R.id.fingerprintText);
         Evidence1 = (TextView) findViewById(R.id.Evidence1);
@@ -457,6 +484,14 @@ public class MainActivity extends AppCompatActivity {
                     sixthImage = 0;
                     sixthTextRef = "";
                 }
+                try {
+                    seventhImage = imageIdlist.get(6);
+                    seventhTextRef = evideneTitlelist.get(6);
+                } catch (IndexOutOfBoundsException e) {
+                    e.printStackTrace();
+                    seventhImage = 0;
+                    seventhTextRef = "";
+                }
 
             } else {
                 firstImage = 0;
@@ -471,6 +506,8 @@ public class MainActivity extends AppCompatActivity {
                 fifthTextRef = "";
                 sixthImage = 0;
                 sixthTextRef = "";
+                seventhImage = 0;
+                seventhTextRef = "";
             }
         }
 
@@ -481,6 +518,7 @@ public class MainActivity extends AppCompatActivity {
         tempImage.setImageResource(fourthImage);
         spiritBoxImage.setImageResource(fifthImage);
         fingerprintImage.setImageResource(sixthImage);
+        dotsProjectorImage.setImageResource(seventhImage);
 
         emf5Text.setText(firstTextRef);
         ghostOrbText.setText(secoundTextRef);
@@ -488,6 +526,7 @@ public class MainActivity extends AppCompatActivity {
         freezingTempText.setText(fourthTextRef);
         spiritBoxText.setText(fifthTextRef);
         fingerprintText.setText(sixthTextRef);
+        dotsProjectorText.setText(seventhTextRef);
 
         actionTitleChanger();
 
@@ -562,21 +601,25 @@ public class MainActivity extends AppCompatActivity {
         Evidence FreezingTemperatures = new Evidence("Freezing Temperatures", R.drawable.freezing_tempt_info);
         Evidence SpiritBox = new Evidence("Spirit Box", R.drawable.spirit_box);
         Evidence Fingerprints = new Evidence("Fingerprints", R.drawable.fingerprints);
+        Evidence Dotsprojector = new Evidence("D.O.T.S. Projector", R.drawable.dotsprojector);
 
-        Ghost Spirit = new Ghost("Spirit", SpiritBox, Fingerprints, GhostWriting, getString(R.string.SpiritDesc));
-        Ghost Wraith = new Ghost("Wraith", SpiritBox, Fingerprints, FreezingTemperatures, getString(R.string.WraithDesc));
-        Ghost Phantom = new Ghost("Phantom", EMFLevel5, GhostOrb, FreezingTemperatures, getString(R.string.PhantomDesc));
-        Ghost Poltergeist = new Ghost("Poltergeist", SpiritBox, Fingerprints, GhostOrb, getString(R.string.PoltergeistDesc));
-        Ghost Banshees = new Ghost("Banshees", EMFLevel5, Fingerprints, FreezingTemperatures, getString(R.string.BansheesDesc));
-        Ghost Jinn = new Ghost("Jinn", SpiritBox, GhostOrb, EMFLevel5, getString(R.string.JinnDesc));
-        Ghost Mare = new Ghost("Mare", SpiritBox, GhostOrb, FreezingTemperatures, getString(R.string.MareDesc));
-        Ghost Revenant = new Ghost("Revenant", EMFLevel5, Fingerprints, GhostWriting, getString(R.string.RevenantDesc));
-        Ghost Shade = new Ghost("Shade", EMFLevel5, GhostOrb, GhostWriting, getString(R.string.ShadeDesc));
-        Ghost Demon = new Ghost("Demon", SpiritBox, FreezingTemperatures, GhostWriting, getString(R.string.DemonDesc));
-        Ghost Yurei = new Ghost("Yurei", GhostOrb, FreezingTemperatures, GhostWriting, getString(R.string.YureiDesc));
-        Ghost Oni = new Ghost("Oni", EMFLevel5, SpiritBox, GhostWriting, getString(R.string.OniDesc));
-        Ghost Yokai = new Ghost("Yokai", GhostOrb, SpiritBox, GhostWriting, getString(R.string.YokaiDesc));
-        Ghost Hantu = new Ghost("Hantu", Fingerprints, GhostOrb, GhostWriting, getString(R.string.HantuDesc));
+        Ghost Spirit = new Ghost("Spirit", SpiritBox, EMFLevel5, GhostWriting, getString(R.string.SpiritDesc));
+        Ghost Wraith = new Ghost("Wraith", SpiritBox, EMFLevel5, Dotsprojector, getString(R.string.WraithDesc));
+        Ghost Phantom = new Ghost("Phantom", SpiritBox, Fingerprints, Dotsprojector, getString(R.string.PhantomDesc));
+        Ghost Poltergeist = new Ghost("Poltergeist", SpiritBox, GhostWriting, Fingerprints, getString(R.string.PoltergeistDesc));
+        Ghost Banshees = new Ghost("Banshees", Dotsprojector, Fingerprints, GhostOrb, getString(R.string.BansheesDesc));
+        Ghost Jinn = new Ghost("Jinn", Fingerprints, FreezingTemperatures, EMFLevel5, getString(R.string.JinnDesc));
+        Ghost Mare = new Ghost("Mare", GhostWriting, GhostOrb, SpiritBox, getString(R.string.MareDesc));
+        Ghost Revenant = new Ghost("Revenant", GhostOrb, FreezingTemperatures, GhostWriting, getString(R.string.RevenantDesc));
+        Ghost Shade = new Ghost("Shade", EMFLevel5, FreezingTemperatures, GhostWriting, getString(R.string.ShadeDesc));
+        Ghost Demon = new Ghost("Demon", GhostWriting, FreezingTemperatures, Fingerprints, getString(R.string.DemonDesc));
+        Ghost Yurei = new Ghost("Yurei", GhostOrb, FreezingTemperatures, Dotsprojector, getString(R.string.YureiDesc));
+        Ghost Oni = new Ghost("Oni", EMFLevel5, FreezingTemperatures, Dotsprojector, getString(R.string.OniDesc));
+        Ghost Yokai = new Ghost("Yokai", GhostOrb, SpiritBox, Dotsprojector, getString(R.string.YokaiDesc));
+        Ghost Hantu = new Ghost("Hantu", Fingerprints, GhostOrb, FreezingTemperatures, getString(R.string.HantuDesc));
+        Ghost Myling = new Ghost("Myling", Fingerprints, EMFLevel5, GhostWriting, getString(R.string.MylingDesc));
+        Ghost Goryo = new Ghost("Goryo", Fingerprints, EMFLevel5, Dotsprojector, getString(R.string.GoryoDesc));
+
 
         ghostList.clear();
         ghostList.add(Spirit);
@@ -593,6 +636,8 @@ public class MainActivity extends AppCompatActivity {
         ghostList.add(Oni);
         ghostList.add(Yokai);
         ghostList.add(Hantu);
+        ghostList.add(Myling);
+        ghostList.add(Goryo);
 
         possibleEvidenceList.clear();
         possibleEvidenceList.add(EMFLevel5);
@@ -601,6 +646,7 @@ public class MainActivity extends AppCompatActivity {
         possibleEvidenceList.add(FreezingTemperatures);
         possibleEvidenceList.add(SpiritBox);
         possibleEvidenceList.add(Fingerprints);
+        possibleEvidenceList.add(Dotsprojector);
 
         imagesForScreenCreator();
 

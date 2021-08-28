@@ -42,8 +42,8 @@
 
             <ImageView
                 android:id="@+id/Image1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="163dp"
+                android:layout_height="104dp"
                 android:scaleType="fitCenter"
 
                 app:srcCompat="@drawable/emf5" />
@@ -52,7 +52,7 @@
             <ImageView
                 android:id="@+id/Image2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="92dp"
                 android:scaleType="centerInside"
                 app:srcCompat="@drawable/ghostorbs" />
 
@@ -65,7 +65,7 @@
 
             <TextView
                 android:id="@+id/emf5Text"
-                android:layout_width="wrap_content"
+                android:layout_width="173dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="6dp"
                 android:text="EMF Level 5"
@@ -90,14 +90,14 @@
             <ImageView
                 android:id="@+id/ghostWritingImage"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="73dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/ghostwriting" />
 
             <ImageView
                 android:id="@+id/tempImage"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:scaleType="centerInside"
                 app:srcCompat="@drawable/freezing_tempt_info" />
 
@@ -106,7 +106,7 @@
         <TableRow
             android:id="@+id/evdTbRow21"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="13dp">
 
             <TextView
                 android:id="@+id/ghostWritingText"
@@ -135,14 +135,14 @@
             <ImageView
                 android:id="@+id/spiritBoxImage"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/spirit_box" />
 
             <ImageView
                 android:id="@+id/fingerprintImage"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="71dp"
                 android:clickable="false"
                 android:scaleType="centerInside"
                 app:srcCompat="@drawable/fingerprints" />
@@ -157,7 +157,7 @@
             <TextView
                 android:id="@+id/spiritBoxText"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="29dp"
                 android:text="Spirit Box"
                 android:textAlignment="center"
                 android:textColor="#000000" />
@@ -169,6 +169,41 @@
                 android:text="Fingerprints"
                 android:textAlignment="center"
                 android:textColor="#000000" />
+
+
+        </TableRow>
+
+        <TableRow
+
+            android:id="@+id/evdTbRow32"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+
+            <ImageView
+                android:id="@+id/dotsProjectorImage"
+                android:layout_width="wrap_content"
+                android:layout_height="87dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/dotsprojector" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/evdTbRow33"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/dotsProjectorText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="D.O.T.S. Projector"
+                android:textAlignment="center"
+                android:textColor="#000000" />
+
+
 
         </TableRow>
     </TableLayout>
