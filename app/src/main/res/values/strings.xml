@@ -15,7 +15,7 @@
     <string name="PhantomDesc">
         A Phantom is a Ghost that can possess the living, most commonly summoned by a Ouija Board. It also induces fear into those around it. \n\nUnique Strengths: Looking at a Phantom will considerably drop your sanity. \n\nWeaknesses: Taking a photo of the Phantom will make it temporarily disappear. \n\nTips &amp; Tricks
 \n\n\u2022Phantoms Can wander to a random player\'s location anywhere on the map.
-\n\n\u2022 Sanity drops twice as fast when looking at a Phantom.
+\n\n\u2022 Sanity drops twice as fast when lookinat a Phantom.
 \n\n\u2022 If you take a Phantom photo, the ghost itself will not appear in the image.
         \n\n \u2022Ghost Not appearing in the pictures can help you identify that what you\'re dealing with is a phantom as it\'s the only ghost that can do this.
 \n\n \u2022 During a hunt, a Phantom will flash visible every 1 to 2 seconds instead of every 0.3 to 1 second for other ghosts, making it harder to take a photo of it.
@@ -77,6 +77,18 @@
     </string>
     <string name="GoryoDesc">Using a video camera is the only way to view a Goryo, when it passes through a DOTS projector. \n\nUnique Strengths:  A Goryo will usually only show itself on camera if there are no people nearby.
 \n\nWeaknesses: They are rarely seen far from their place of death.
+    </string>
+    <string name="ObakeDesc">Obake are terrifying shape-shifters, capable of taking on many forms. They have been seen taking on humanoid shapes to attract their prey. \n\nUnique Strengths:  When interacting with the environment, an Obake will rarely leave a trace.
+\n\nWeaknesses: Sometimes this ghost will shapeshift, leaving behind unique evidence.
+    </string>
+    <string name="OnryoDesc">The Onryo is often referred to as "The Wrathful Spirit." It steals souls from dying victims bodies to seek revenge. This ghost has been known to fear any form of fire, and will do anything to be far from it. \n\nUnique Strengths:  Extinguishing a flame can cause an Onyro to attack
+\n\nWeaknesses: When threatened, this ghost will be less likely to hunt.
+    </string>
+    <string name="RaijuDesc">A Raiju is a demon that thrives on electrical current. While generally calm, they can become agitated when overwhelmed with power. \n\nUnique Strengths:  A Raiju can siphon power from nearby electrical devices, making it move faster.
+\n\nWeaknesses: Raiju are constantly disrupting electronic equipment, making it easier to track when attacking.
+    </string>
+    <string name="TheTwinsDesc">These ghosts have been reported to mimic each others actions. They alternate their attacks to confuse their prey. \n\nUnique Strengths: Either Twin can be angered and initiate an attack on their prey.
+        \n\nWeaknesses: The Twins will often interact with the environment at the same time.
     </string>
 
 </resources>
