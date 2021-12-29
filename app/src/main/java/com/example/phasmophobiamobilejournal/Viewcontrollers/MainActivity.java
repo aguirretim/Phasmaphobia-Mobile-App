@@ -623,6 +623,7 @@ public class MainActivity extends AppCompatActivity {
         Ghost Onryo = new Ghost("Onryo", GhostOrb, SpiritBox, FreezingTemperatures, getString(R.string.OnryoDesc));
         Ghost Raiju = new Ghost("Raiju", EMFLevel5, GhostOrb, Dotsprojector, getString(R.string.RaijuDesc));
         Ghost TheTwins = new Ghost("The Twins", SpiritBox, EMFLevel5, FreezingTemperatures, getString(R.string.TheTwinsDesc));
+        Ghost TheMimic = new Ghost("The Mimic", SpiritBox, Fingerprints, FreezingTemperatures, getString(R.string.TheMimicDesc));
 
 
         ghostList.clear();
@@ -646,6 +647,7 @@ public class MainActivity extends AppCompatActivity {
         ghostList.add(Onryo);
         ghostList.add(Raiju);
         ghostList.add(TheTwins);
+        ghostList.add(TheMimic);
 
         possibleEvidenceList.clear();
         possibleEvidenceList.add(EMFLevel5);

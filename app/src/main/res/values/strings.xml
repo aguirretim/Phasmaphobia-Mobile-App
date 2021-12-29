@@ -90,5 +90,17 @@
     <string name="TheTwinsDesc">These ghosts have been reported to mimic each others actions. They alternate their attacks to confuse their prey. \n\nUnique Strengths: Either Twin can be angered and initiate an attack on their prey.
         \n\nWeaknesses: The Twins will often interact with the environment at the same time.
     </string>
+ <string name="TheMimicDesc">The Mimic is an elusive, mysterious, copycat ghost that mirrors traits and behaviours from others, including other ghost types. \n\nUnique Strengths: We\'re unsure what this ghost is capable of. Be careful.
+        \n\nWeaknesses: Several reports have noted ghost orb sightings near mimics.
+     \n\nTips &amp; Tricks
+      \n\n\u2022 The Mimic also provides "evidence" of Ghost Orbs in addition to its three main evidence types. It is the only ghost that would appear to have four types of evidence (or three on Nightmare).
+        \n\n\u2022 Treat a Mimic as if it had every possible modifier is the safest way to handle it.
+     \n\u2022 Try to minimize speaking when near the ghost (Yokai)
+ \n\u2022 Turn off electronics that are no longer needed (Raiju)
+\n\u2022 Keep the lights on in the Ghost Room (Mare)
+\n\u2022 Make sure to have a source of flame in the Ghost Room (Onryo)
+\n\u2022 In general, be prepared for the possibility of early hunts (Demon)
+
+ </string>
 
 </resources>

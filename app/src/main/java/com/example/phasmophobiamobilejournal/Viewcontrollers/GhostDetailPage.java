@@ -46,9 +46,13 @@ public class GhostDetailPage extends AppCompatActivity {
 
         selectedGhostArray.add(selectedGhost.getGhostName());
 
-
-        descriptionTitleText.setText(emboldenKeywords("Based on the evidence you selected. The ghost could be a " + selectedGhost.getGhostName(), selectedGhostArray));
-
+        if ((selectedGhost.getGhostName().contains("The Mimic")) ||
+                (selectedGhost.getGhostName().contains("The Twins"))){
+            descriptionTitleText.setText(emboldenKeywords("Based on the evidence you selected. The ghost could be " + selectedGhost.getGhostName(), selectedGhostArray));
+        }
+        else {
+            descriptionTitleText.setText(emboldenKeywords("Based on the evidence you selected. The ghost could be a " + selectedGhost.getGhostName(), selectedGhostArray));
+        }
         descriptionTextToBold.add("Unique Strengths");
         descriptionTextToBold.add("Weaknesses");
         descriptionTextToBold.add("Tips & Tricks");
