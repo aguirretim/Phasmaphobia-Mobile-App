@@ -100,7 +100,17 @@
 \n\u2022 Keep the lights on in the Ghost Room (Mare)
 \n\u2022 Make sure to have a source of flame in the Ghost Room (Onryo)
 \n\u2022 In general, be prepared for the possibility of early hunts (Demon)
-
  </string>
+    <string name="DeogenDesc">Sometimes surrounded by an endless fog, Deogen have been eluding ghost hunters for years. These ghosts have been reported to find even the most hidden prey, before stalking them into exhaustion.
+        \n\nUnique Strengths:  Deogen constantly sense the living. You can run but you can\'t hide. Always knows where players are during a hunt and
+moves at a high speed with no player in sight.
+\n\nWeaknesses: Deogen require a lot of energy to form and will move very slowly when approaching its victim. Significantly slows down when near the player
+    </string>
+    <string name="MoroiDesc">Moroi have risen from the grave to drain energy from the living. They have been known to place curses on their victims, curable only by antidotes or moving very far away. \n\nUnique Strengths:  The weaker their victims, the stronger the Moroi becomes. Moves noticeably faster at low player sanity
+\n\nWeaknesses: Moroi suffer from hyperosmia, weakening them for longer periods. Smudge sticks blind the ghost for longer during hunts
+    </string>
+    <string name="ThayeDesc">Thaye have been known to rapidly age over time, even in the afterlife. From what we\'ve learned, they seem to deteriorate faster while within the presence of the living. \n\nUnique Strengths:  Upon entering the location, Thaye will become active, defensive and agile. Entering the ghost room for the first time makes it very active
+\n\nWeaknesses: Thaye will weaken over time, making them weaker, slower and less aggressive. The more time spent in the ghost room, the quieter the Thaye becomes
+    </string>
 
 </resources>
