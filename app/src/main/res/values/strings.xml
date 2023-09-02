@@ -20,11 +20,18 @@
         \n\nUnique Strengths: Looking at a Phantom considerably drops your sanity.
         \n\nWeaknesses: Taking a photo of the Phantom makes it temporarily disappear.
         \n\nTips &amp; Tricks
+        \n\n\u2022 Longer blink in hunts 1 to 2 seconds, nearly invisible during hunt.
+        \n\n\u2022 Disappears if you photograph during event
+                Electronic equipment malfunctions wil stop.
+                Players will no longer hear their heartbeats if they happen.
+                The audio of the event continues to play throughout its duration.
+        \n\n\u2022 If you take a photo of a Phantom, the ghost won\'t appear in the image.
         \n\n\u2022 Phantoms can wander to a random player\'s location anywhere on the map.
         \n\n\u2022 Sanity drops twice as fast when looking at a Phantom.
-        \n\n\u2022 If you take a photo of a Phantom, the ghost won\'t appear in the image.
-        \n\n\u2022 Ghost not appearing in photos indicates it\'s a Phantom, as it\'s the only ghost that does this.
-        \n\n\u2022 During a hunt, a Phantom flashes visible every 1 to 2 seconds, making it harder to photograph.</string>
+        \n\n\u2022 Phantom\'s infrequent visibility during hunts makes tracking difficult.
+        \n\n\u2022 Looping the ghost is challenging and not recommended.
+        \n\n\u2022 Using Incense to blind the Phantom requires caution, smudging earlier than usual to avoid surprise. Stand at the end of a long hallway for safety.
+             </string>
     <string name="PoltergeistDesc" formatted="false">A Poltergeist, also known as a noisy ghost, manipulates objects to spread fear.
         \n\nUnique Strengths: A Poltergeist can throw large amounts of objects at once.
         \n\nWeaknesses: Rooms with no movable objects.
@@ -44,16 +51,31 @@
         \n\nUnique Strengths: The Jinn moves faster the further the target is.
         \n\nWeaknesses: Cutting off power limits the Jinn\'s speed.
         \n\nTips &amp; Tricks
+        \n\n\u2022 Breaker on + Line of sight = Increased speed (not as fast as a Revenant or slow without LOS)
         \n\n\u2022 Turn off the breaker to disable Jinn\'s ghost powers.
+            \n But this makes lights go out and sanity drains. Candles can help counter sanity loss.
         \n\n\u2022 Jinn has a 25% chance to drop a player\'s sanity within 3 meters.
-        \n\n\u2022 Jinn slows down when within 4 meters of you.</string>
+         \n\ will give an emf reading at the breaker when this ability is performed
+        \n\n\u2022 Within 3m of player = Normal ghost speed during hunt
+        \n\n\u2022 To identify Jinn: During a hunt, observe speed change in a long room with clear line-of-sight. If it instantly speeds up upon seeing you, it\'s likely a Jinn. Be cautious if testing its speed within 3 meters.
+        \n\n\u2022 Another way to identify Jinn: Leave a EMF reader at fuse box; if it detects reading without box changing, it\'s likely Jinn\'s ability, ruling out other causes.
+    </string>
     <string name="MareDesc" formatted="false">A Mare primarily attacks in the dark. Keeping lights on and avoiding dark areas lowers aggression, but it attempts to turn off lights to hunt.
         \n\nUnique Strengths: Attacks more in the dark, switching off lights.
         \n\nWeaknesses: Keeping lights on.
         \n\nTips &amp; Tricks
-        \n\n\u2022 Mares hunt when sanity is below 40% with lights on.
-        \n\n\u2022 Mares hunt at sanity 60% and below with lights off.
-        \n\n\u2022 Turn on lights in/near the ghost room to lower Mares hunting threshold.</string>
+        \n\n\u2022 Hunts at 60% with lights off, 40% with lights on
+        \n\n\u2022 Can\'t turn on lights
+        \n\n\u2022 Higher light breaking event chance
+        \n\n\u2022 Wanders more with lights on in its room
+        \n\n\u2022  Nearby light turns on, Mare might quickly turn it off
+        \n 10-second cooldown, resets if light turned on again
+        \n Applies to lights, TVs, and computers
+        \n\n\u2022 Mare prefers hunting with lights off, so keep lights on in its favorite room and nearby areas to reduce hunt threshold.
+            \n Once Mare\'s sanity threshold is below 40%, it hunts regardless of lights. Leave lights off in its favorite room to concentrate its hunting there.
+        \n\n\u2022Frequent room changes and wandering into unexplored dark areas may indicate a Mare if lights are usually kept on near the ghost. Especially in Professional and Nightmare
+
+    </string>
     <string name="RevenantDesc">A Revenant is a ghost that can attack indiscriminately regardless of sanity levels when hunting. Hiding from the Revenant causes it to move slowly, but it travels faster than any other ghost if it\'s hunting a victim.
         \n\nUnique Strengths: Attacks anyone regardless of sanity levels; can switch targets while hunting.
         \n\nWeaknesses: Moves extremely slowly when players hide.
@@ -120,7 +142,7 @@
         \n\nWeaknesses: When threatened, this ghost is less likely to hunt.
         \n\nTips &amp; Tricks
         \n\n\u2022 Can hunt at 60% sanity
-        \n\n\u2022 3 extinguished flames trigger hunt
+        \n\n\u2022 3 extinguished flames trigger hunt (Any Sanity)
         \n\n\u2022 Can\'t hunt within 4m of flame
         \n\n\u2022 Test with candles, crucifixes in room
         \n Crucifix without candle, not onryo
@@ -133,10 +155,25 @@
     </string>
     <string name="RaijuDesc">A Raiju thrives on electrical current, siphoning power from devices. It can be agitated by excess power.
         \n\nUnique Strengths: A Raiju can move faster by siphoning power from electrical devices.
-        \n\nWeaknesses: Constantly disrupts electronic equipment, making it easier to track.</string>
+        \n\nWeaknesses: Constantly disrupts electronic equipment, making it easier to track.
+        \n\nTips &amp; Tricks
+       \n\n\u2022 Faster speed near on electronics: 65% with electronics on, 50% without
+        \n\n\u2022 Range of speed increase: 6m on small maps, 8m on medium, 10m on large
+        \n\n\u2022 Hunt malfunctions electronics: at 15m for Raiju, compare to 10m others
+       \n\n\u2022  Prevent early hunts: by removing extra turned on electronics, avoid discarding them on ground during hunts.
+        \n\n\u2022 Watch Raiju and Myling speed near electronics to avoid confusion
+    </string>
     <string name="TheTwinsDesc">These ghosts mimic each other\'s actions, alternating their attacks to confuse their prey.
         \n\nUnique Strengths: Either Twin can initiate an attack on their prey.
-        \n\nWeaknesses: The Twins often interact with the environment simultaneously.</string>
+        \n\nWeaknesses: The Twins often interact with the environment simultaneously.
+        \n\nTips &amp; Tricks
+        \n\n\u2022 Can interact with multiple objects in different rooms simultaneously
+        \n\n\u2022 Varied speeds heard during multiple hunts
+        \n\n\u2022 Twins may release a slightly faster (110%) or slower (90%) ghost during a hunt
+        \n\n\u2022 Only one ghost sent out during a hunt
+        \n\n\u2022 Can hunt from a different location using a "decoy" twin
+
+    </string>
     <string name="TheMimicDesc">The Mimic is an elusive, mysterious, copycat ghost that mirrors traits and behaviors from others, including other ghost types.
         \n\nUnique Strengths: Uncertain capabilities. Treat a Mimic as if it had every possible modifier.
         \n\nWeaknesses: Ghost orb sightings near mimics.
