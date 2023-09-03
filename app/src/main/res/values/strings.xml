@@ -40,11 +40,11 @@
         \n\n\u2022 Throws items, reduces player sanity by 2% per throw.
         \n\n\u2022 100% chance to throw objects during hunts, every .5 seconds.
         \n\n\u2022 Can create an "explosion" of items in the ghost room.
-        \n\n\u2022 Scatter objects in the room to trigger the Poltergeist's throwing ability.
+        \n\n\u2022 Scatter objects in the room to trigger the Poltergeist\'s throwing ability.
         \n\n\u2022 Look for objects being flung with force or multiple objects thrown simultaneously.
         \n\n\u2022 Create small spread-out piles for better detection.
         \n\n\u2022 Be cautious of inconclusive behavior; random interactions can mimic Poltergeist activity.
-        \n\n\u2022 Low activity doesn't rule out the possibility of a Poltergeist.
+        \n\n\u2022 Low activity doesn\'t rule out the possibility of a Poltergeist.
         \n\n\u2022 Increase activity by turning off the lights.
         </string>
     <string name="BansheesDesc">The singing siren, known for attracting its victims through song. It has been known to single out its prey before making a killing blow.
