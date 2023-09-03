@@ -89,6 +89,9 @@ public class MainActivity extends AppCompatActivity {
 
     boolean newGhostReset = false;
 
+    boolean ghostFound = false;
+
+
 
     // create a new TableRow
     // TableRow row = new TableRow(this);
@@ -286,6 +289,9 @@ public class MainActivity extends AppCompatActivity {
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                possibleGhostList.clear();
+                evideneceCollected.clear();
+                ghostFound = false;
                 onBackPressed();
             }
         });
@@ -333,9 +339,14 @@ public class MainActivity extends AppCompatActivity {
     public ArrayList<Evidence> possibleEvidenceCreator() {
         possibleEvidenceList.clear();
         String Evidence2;
+        String Evidence3;
         Evidence2 = "";
+        Evidence3 = "";
         if (evideneceCollected.size() == 2) {
             Evidence2 = evideneceCollected.get(1);
+        }
+        if (evideneceCollected.size() == 3) {
+            Evidence3 = evideneceCollected.get(2);
         }
 
         for (Ghost ghost : possibleGhostList) {
@@ -383,49 +394,104 @@ public class MainActivity extends AppCompatActivity {
                     possibleGhostList.add(ghost);
                 }
             }
+            if (evideneceCollected.contains("Ghost Orb")) {
+                for (Ghost ghosty : ghostList) {
+                    if ("The Mimic".equals(ghosty.getGhostName())) {
+                        possibleGhostList.add(ghosty);
+                    }
+                }
+            }
         }
 
         ArrayList<Ghost> newGhostList = new ArrayList<Ghost>();
         ArrayList<Evidence> evidenceToCycle = new ArrayList<Evidence>();
+       Ghost mimicHolder = null;
+        for (Ghost ghosty : ghostList) {
+            if ("The Mimic".equals(ghosty.getGhostName())) {
+                mimicHolder = ghosty;
+            }
+        }
 
+        if (evideneceCollected.size() >= 2){
 
-        if (evideneceCollected.size() >= 2) {
-
-            for (Ghost ghost : possibleGhostList) {
-                evidenceToCycle = ghost.getEvideneceForGhost();
-                if (evidenceToCycle.get(0).getEvidenceTitle().contains(selectedEvidence) ||
-                        evidenceToCycle.get(1).getEvidenceTitle().contains(selectedEvidence) ||
-                        evidenceToCycle.get(2).getEvidenceTitle().contains(selectedEvidence)
-                ) {
-                    newGhostList.add(ghost);
+        for (Ghost ghost : possibleGhostList) {
+            evidenceToCycle = ghost.getEvideneceForGhost();
+            if (evidenceToCycle.get(0).getEvidenceTitle().contains(selectedEvidence) ||
+                    evidenceToCycle.get(1).getEvidenceTitle().contains(selectedEvidence) ||
+                    evidenceToCycle.get(2).getEvidenceTitle().contains(selectedEvidence)
+            ) {
+                newGhostList.add(ghost);
+            }
+        }
+        if (evideneceCollected.contains("Ghost Orb") && evideneceCollected.contains("Spirit Box") ||
+                evideneceCollected.contains("Ghost Orb") && evideneceCollected.contains("Fingerprints") ||
+                evideneceCollected.contains("Ghost Orb") && evideneceCollected.contains("Freezing Temperatures")) {
+            for (Ghost ghosty : ghostList) {
+                if ("The Mimic".equals(ghosty.getGhostName())) {
+                    possibleGhostList.add(ghosty);
                 }
             }
-
-
             possibleGhostList.clear();
 
             possibleGhostList.addAll(newGhostList);
+        }
+
+
 
         }
 
 
-        if (evideneceCollected.size() == 3) {
+        if (evideneceCollected.size() == 3 &&
+                evideneceCollected.contains("Ghost Orb")&&  evideneceCollected.contains("Fingerprints") &&  evideneceCollected.contains("Freezing Temperatures") ||
+                evideneceCollected.contains("Ghost Orb")&&  evideneceCollected.contains("Freezing Temperatures") &&  evideneceCollected.contains("Spirit Box")
+        ) {newGhostList.clear();
+            for (Ghost ghost : possibleGhostList) {
+                evidenceToCycle = ghost.getEvideneceForGhost();
+                if (evidenceToCycle.get(0).getEvidenceTitle().contains(selectedEvidence) ||
+                        evidenceToCycle.get(1).getEvidenceTitle().contains(selectedEvidence) ||
+                        evidenceToCycle.get(2).getEvidenceTitle().contains(selectedEvidence) ||
+                        evidenceToCycle.get(3).getEvidenceTitle().contains(selectedEvidence)
+                ) {
 
+                    newGhostList.add(ghost);
+                }
+            }
+
+            possibleGhostList.clear();
+
+            possibleGhostList.addAll(newGhostList);
+       }  else if ((evideneceCollected.size() == 3) &&
+                !((evideneceCollected.contains("Ghost Orb") && evideneceCollected.contains("Fingerprints") && evideneceCollected.contains("Freezing Temperatures")) ||
+                        (evideneceCollected.contains("Ghost Orb") && evideneceCollected.contains("Freezing Temperatures") && evideneceCollected.contains("Fingerprints")))
+        )  {
+            ghostFound =true;
             Intent intent = new Intent(MainActivity.this, GhostDetailPage.
                     class);
             intent.putExtra("selectedGhost", possibleGhostList.get(0));
             intent.putParcelableArrayListExtra("possibleGhostList", possibleGhostList);
             intent.putStringArrayListExtra("evideneceCollected", evideneceCollected);
             startActivity(intent);
+        } if ((evideneceCollected.size() == 4))  {
+
+            Intent intent = new Intent(MainActivity.this, GhostDetailPage.
+                    class);
+            ghostFound = true;
+            intent.putExtra("selectedGhost", possibleGhostList.get(0));
+            intent.putParcelableArrayListExtra("possibleGhostList", possibleGhostList);
+            intent.putStringArrayListExtra("evideneceCollected", evideneceCollected);
+            startActivity(intent);
+        }
 
         }
 
 
-    }
+
+
+
 
     public void imagesForScreenCreator() {
 
-        if (evideneceCollected.size() < 3) {
+        if (evideneceCollected.size() < 4) {
             if (possibleEvidenceList.size() > 0) {
 
 
@@ -545,8 +611,11 @@ public class MainActivity extends AppCompatActivity {
         if (evideneceCollected.size() == 1) {
             actionTitle.setText("Select your 2nd evidence found");
         }
-        if (evideneceCollected.size() == 2) {
+        if (evideneceCollected.size() == 2  ) {
             actionTitle.setText("Select your 3rd evidence found");
+        }
+        if (evideneceCollected.size() == 3 && possibleMimicChecker()){
+            actionTitle.setText("Select your 4th evidence found To confirm Mimic or not");
         }
 
         possibleGhostButton();
@@ -560,13 +629,18 @@ public class MainActivity extends AppCompatActivity {
             possubleGhostTitle.setVisibility(View.VISIBLE);
             resetButton.setVisibility(View.VISIBLE);
         }
+        if (evideneceCollected.size() >= 2) {
+            ghostImage.setVisibility(View.VISIBLE);
+            possubleGhostTitle.setVisibility(View.VISIBLE);
+            resetButton.setVisibility(View.VISIBLE);
+        }
 
         if (evideneceCollected.isEmpty()) {
-
             ghostImage.setVisibility(View.GONE);
             possubleGhostTitle.setVisibility(View.GONE);
             Evidence1.setVisibility(View.GONE);
             Evidence2.setVisibility(View.GONE);
+            Evidence3.setVisibility(View.GONE);
             resetButton.setVisibility(View.GONE);
         }
 
@@ -578,6 +652,10 @@ public class MainActivity extends AppCompatActivity {
             Evidence2.setText("Evidence 2: " + evideneceCollected.get(1));
             Evidence2.setVisibility(View.VISIBLE);
         }
+        if (evideneceCollected.size() == 3) {
+            Evidence3.setText("Evidence 3: " + evideneceCollected.get(2));
+            Evidence3.setVisibility(View.VISIBLE);
+        }
 
 
     }
@@ -585,10 +663,24 @@ public class MainActivity extends AppCompatActivity {
 
     public void onResume() {
 
-        if (evideneceCollected.size() == 3) {
+
+
+
+        if(evideneceCollected.size() == 3 && !(possibleMimicChecker())){
+            evideneceCollected.clear();
             onBackPressed();
         }
-
+        if(evideneceCollected.size() == 4){
+            evideneceCollected.clear();
+            onBackPressed();
+        }
+        if((evideneceCollected.size() == 3 && ghostFound)
+        ||(evideneceCollected.size() == 4 && ghostFound)
+        ){
+        ghostFound = false;
+            evideneceCollected.clear();
+            onBackPressed();
+        }
         super.onResume();
 
 
@@ -668,11 +760,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public Boolean possibleMimicChecker(){
+        Boolean possibleMimic = false;
+        for (Ghost ghosty : this.possibleGhostList) {
+            if ("The Mimic".equals(ghosty.getGhostName())) {
+                possibleMimic = true;
+                break;
+            }}
+    return possibleMimic;
+    }
+
     @Override
     public void onBackPressed() {
         // code here to show dialog
 
-
+        possibleEvidenceList.clear();
         possibleGhostList.clear();
         evideneceCollected.clear();
 
