@@ -12,6 +12,7 @@
         \n\nTips &amp; Tricks
         \n\n\u2022 Wraiths can go through walls outside of hunts but not during hunts.
         \n\n\u2022 Wraiths teleport, often showing EMF Level 2, 25% chance of Level 5.
+        \n If EMF level 2 occurs far from ghost room, possibly a Wraith.
         \n\n\u2022 Wraiths no longer step in salt altogether
         \n\n\u2022 Using salt in the Summoning Circle before summoning can help identify a Wraith.
         \n\n\u2022 Salt + motion sensors on a doorway. If ghost avoids salt but triggers sensors, likely Wraith.
@@ -36,17 +37,43 @@
         \n\nUnique Strengths: A Poltergeist can throw large amounts of objects at once.
         \n\nWeaknesses: Rooms with no movable objects.
         \n\nTips &amp; Tricks
-        \n\n\u2022 If you\re within sight of items thrown by a Poltergeist, you lose sanity equal to twice the number of items thrown.
-        \n\nFor example:
-        \n(thrown items x 2 = % sanity lost)
-        \n2 forks thrown x 2 = 4% sanity lost</string>
-    <string name="BansheesDesc">Banshees react strongly to a Crucifix, attempting to stalk and pick off ghost hunters one by one.
-        \n\nUnique Strengths: Targets one player at a time during hunts, putting them in greater danger.
-        \n\nWeaknesses: Hates the Crucifix, making it effective against it.
+        \n\n\u2022 Throws items, reduces player sanity by 2% per throw.
+        \n\n\u2022 100% chance to throw objects during hunts, every .5 seconds.
+        \n\n\u2022 Can create an "explosion" of items in the ghost room.
+        \n\n\u2022 Scatter objects in the room to trigger the Poltergeist's throwing ability.
+        \n\n\u2022 Look for objects being flung with force or multiple objects thrown simultaneously.
+        \n\n\u2022 Create small spread-out piles for better detection.
+        \n\n\u2022 Be cautious of inconclusive behavior; random interactions can mimic Poltergeist activity.
+        \n\n\u2022 Low activity doesn't rule out the possibility of a Poltergeist.
+        \n\n\u2022 Increase activity by turning off the lights.
+        </string>
+    <string name="BansheesDesc">The singing siren, known for attracting its victims through song. It has been known to single out its prey before making a killing blow.
+        \n\nUnique Strengths: Banshees will weaken their target before striking.
+        \n\nWeaknesses: Banshees can sometimes be heard screaming with a parabolic microphone.
         \n\nTips &amp; Tricks
+        \n\n\u2022 Hunts triggered at 50% sanity.
+
         \n\n\u2022 A Banshee aggressively hunts the target player in the building. If the player isn\'t present, it hunts others normally.
         \n\n\u2022 Banshees can wander near their target and enter hunt mode if in their line of sight.
-        \n\n\u2022 Banshees initiate hunts when players enter the building with the target inside, ignoring sanity levels.</string>
+        \n\n\u2022 Banshees initiate hunts when players enter the building with the low sanity target inside, ignoring avg sanity levels.
+        \n Can hunt from 87.5% to 12.5% average sanity.
+        \n Target\'s sanity drops 15% if specific ghost event conditions are met.
+        \n\n\u2022 Roaming ability has 67% chance to target player during roam.
+        \n Roaming doesn\'t leave EMF reading, unlike Phantom\'s ability.
+        \n\n\u2022 Focuses on one player inside the house.
+        \n Hunts like a regular ghost if target leaves.
+        \n\n\u2022 Ignores non-targets during hunts.
+        \n\n\u2022 More singing ghost events likely.
+        \n\n\u2022 Distinct parabolic mic sound: scream.
+        \n 33% chance of unique shriek-like sound
+        \n\n\u2022 Use players as bait with Incense or planned escapes to identify target.
+        \n Bait players attract the ghost using talking or electronics.
+        \n Multiple players can do this to see who the Banshee targets.
+        \n Useful when sanity-based method is unclear or on Nightmare difficulty.
+        \n All players should be indoors for the test.
+
+
+    </string>
     <string name="JinnDesc">A Jinn is territorial and attacks when threatened. It can travel at high speeds and is limited by cutting off power via the breaker box.
         \n\nUnique Strengths: The Jinn moves faster the further the target is.
         \n\nWeaknesses: Cutting off power limits the Jinn\'s speed.
@@ -108,6 +135,7 @@
         \n\n\u2022 Short 20-second hunt cooldown (others 25 seconds)
         \n\n\u2022 Smudging stops demon for 60s (others 90s, spirit 180s)
         \n\n\u2022 A crucifix is recommended to prevent hunts. stops demon within 5m (others 3m)
+        \n A hunt close to a crucifix suggests it might not be a demon.
 
 </string>
     <string name="YureiDesc">A Yurei is a type of ghost that drains player\'s sanity quicker than any other ghost. Smudging the room prevents it from moving for a long time.
