@@ -86,8 +86,21 @@
         \n\nUnique Strengths: Extremely shy, hard to find and detect.
         \n\nWeaknesses: Doesn\'t hunt when players are in a group.
         \n\nTips &amp; Tricks
+        \n\n\u2022 Shade hunts at average sanity below 35%.
         \n\n\u2022 Shades have a VERY LOW chance of hunting when multiple people are nearby, but it\'s not impossible.
-        \n\n\u2022 Gain activity on shades by having someone go in alone.</string>
+        \n Turn off lights, avoid entering ghost room to provoke interactions.
+        \n\n\u2022 Shadow form in ghost events or more airball events.
+        \n Shade\'s shadow appearance from cursed items not guaranteed.
+        \n\n\u2022 Event chance rises with lower average sanity.
+        \n\n\u2022 Won\'t throw objects in the same room.
+        \n\n\u2022 Won\'t hunt with a nearby player.
+        \n\n\u2022 Test by staying in ghost room with a crucifix.
+        \n\n\u2022 Low sanity, no hunt or crucifix use? Likely a shade.
+        \n\n\u2022 Summoning Circle, Music Box, Monkey Paw can reveal black shadow appearance.
+        \n Restores full visibility when hunt starts.
+
+
+    </string>
     <string name="DemonDesc">A Demon is one of the worst ghosts to encounter.
         Highly aggressive, it attacks more often than any other ghost.
         \n\nTips &amp; Tricks
@@ -101,7 +114,21 @@
         \n\nUnique Strengths: Drains player sanity quickly.
         \n\nWeaknesses: Using a smudge stick in the same room stops the Yurei from moving.
         \n\nTips &amp; Tricks
-        \n\n\u2022 Yureis drain sanity during hunts if you\'re within 10 meters.</string>
+        \n\n\u2022 Yureis drain sanity during hunts if you\'re within 10 meters.
+        \n\n\u2022 Zaps 15% nearby player sanity
+        \n\n\u2022 Ability closes room door
+        \n All ghosts, including Yurei, can shut doors as part of their behavior. Yurei might do it more often due to its sanity drain ability.
+        \n Yurei\'s ability affects tent doors, not locker or closet doors.
+        \n\n\u2022 Smudge traps Yurei in Ghost room for 60 sec
+        \n\n\u2022 Keep doors open near the ghost to observe its ability.
+        \n\n\u2022 If a front door closes fully without a ghost event or hunt, it\'s definitely a Yurei.
+        \n\n\u2022 Verify ghost interaction with EMF Reader to know if ghost touched door.
+        \n\n\u2022 Yurei only closes doors, doesn\'t open them.
+
+
+    </string>
+
+
     <string name="OniDesc">An Oni is a very active ghost, likely to show itself within the first few minutes of the game. It often wanders around near the ghost room. It\'s recommended to hide in a closet and wait for it to leave.
         \n\nUnique Strengths: Oni are more active whilst people are nearby and will drain their sanity faster when manifesting.
         \n\nWeaknesses: Oni disappear less often while hunting their prey.
@@ -127,16 +154,70 @@
         \n\nUnique Strengths: Moves faster in colder areas.
         \n\nWeaknesses: Moves slower in warmer areas.
         \n\nTips &amp; Tricks
-        \n\n\u2022 Keeping the breaker on slows down the Hantu by keeping the house warm.</string>
+        \n\n\u2022 Keeping the breaker on slows down the Hantu by keeping the house warm.
+        \n\n\u2022 Hantu speed increases as temperature lowers.
+        \n\n\u2022 No gradual speed increase with line of sight.
+        \n\n\u2022 If you see Ghost breath during hunt Most likely Hantu
+        \n\n\u2022 Breaker turn-off chance higher.
+        \n\n\u2022 Breaker off, freezing breath in any room during hunt.
+        \n\n\u2022 Freezing temps always in Nightmare mode.
+        \n\n\u2022 Avoid ghost room during hunts. Light Snow raises danger.
+        \n\n\u2022 Leaving the breaker on creates high temps slower ghost for looping
+        \n\n\u2022 Loop around furniture during warm hunt; slow speed = Hantu.
+        \n\n\u2022 Freezing breath in dark (breaker off) also IDs Hantu (riskier)
+        \n\n\u2022 Raiju mimics speed with electronics; remove for clarity.
+        \n\n\u2022 Moroi speeds up via lowering average sanity.
+
+
+
+    </string>
     <string name="MylingDesc">A Myling is a very vocal and active ghost. It\'s quiet when hunting its prey.
         \n\nUnique Strengths: Quieter when hunting.
-        \n\nWeaknesses: Mylings frequently make paranormal sounds.</string>
+        \n\nWeaknesses: Mylings frequently make paranormal sounds.
+     \n\nTips &amp; Tricks
+    \n\n\u2022 Stealthy ninja assassin
+    \n\n\u2022 Heard within 12 meters during a hunt (footsteps and vocal noises)
+    \n\n\u2022 Other ghosts heard up to 20 meters
+    \n\n\u2022 Myling responds more on parabolic microphone
+    \n\n\u2022 Test: Hide with flashlight/dots, if only footsteps when equipment flickers, likely a Myling
+    </string>
     <string name="GoryoDesc">Using a video camera is the only way to view a Goryo when it passes through a DOTS projector.
         \n\nUnique Strengths: A Goryo usually only shows itself on camera if no people are nearby.
-        \n\nWeaknesses: Rarely seen far from its place of death.</string>
+        \n\nWeaknesses: Rarely seen far from its place of death.
+        \n\nTips &amp; Tricks
+        \n\n\u2022 Goryo\'s dots visible only through video camera.
+        \n\n\u2022 Dots won\'t appear if you\'re in the same room.
+        \n\n\u2022 Check for Goryo: no players in room, use camera for dots.
+        \n\n\u2022 Dots forced evidence in Nightmare mode.
+        \n\n\u2022 No dots without video camera means no Goryo.
+        \n Visible D.O.T.S. evidence on camera but not to naked eye = likely Goryo.
+        \n D.O.T.S. seen without camera = not Goryo. Adjust brightness for clarity.
+        \n\n\u2022 Goryo stays in its room, consistent favorite room.
+        \n Sanity wish from Monkey Paw overrides this.
+        \n\n\u2022 Tough to identify on 0 evidence runs. Observe favorite room change or use sensors/salt.
+
+    </string>
     <string name="ObakeDesc">Obake are shape-shifters, taking on many forms, including humanoid shapes.
         \n\nUnique Strengths: When interacting with the environment, an Obake rarely leaves a trace.
-        \n\nWeaknesses: This ghost will shapeshift, leaving behind unique evidence.</string>
+        \n\nWeaknesses: This ghost will shapeshift, leaving behind unique evidence.
+        \n\nTips &amp; Tricks
+        \n\n\u2022 Unique 6-fingered fingerprint
+        \n Two fingerprints on light switch
+        \n Five fingerprints on keyboards and Prison doors (instead of four)
+        \n\n\u2022Normal fingerprints don\'t rule out an Obake.
+        \n\n\u2022 Forced fingerprints as evidence on Nightmare
+        \n\n\u2022 25% chance of not leaving fingerprints
+        \n\n\u2022 Ability to halve fingerprint duration
+        \n\n\u2022 During hunts, Obake can shapeshift briefly
+        \n\n\u2022 Flash as another ghost model of same gender
+        \n\n\u2022 6.66% chance to shapeshift with each blink during hunt
+        \n\n\u2022 Test Obake by looping and observing model change
+        \n\n\u2022 Can change ghost model stance during hunt
+        \n\n\u2022 Test by having it run from corridor to check blink change
+        \n\n\u2022 Inconsistent fingerprints suggest an Obake; no prints, then prints on different surfaces.
+        \n\n\u2022 Difficulty settings can affect fingerprints and decay timers.
+    </string>
+
     <string name="OnryoDesc">The Onryo, "The Wrathful Spirit," steals souls to seek revenge. It fears fire and avoids it.
         \n\nUnique Strengths: Extinguishing a flame can cause an Onryo to attack.
         \n\nWeaknesses: When threatened, this ghost is less likely to hunt.
@@ -179,23 +260,58 @@
         \n\nWeaknesses: Ghost orb sightings near mimics.
         \n\nTips &amp; Tricks
         \n\n\u2022 The Mimic provides "evidence" of Ghost Orbs in addition to its three main evidence types.
-        \n\u2022 Treat a Mimic as if it had every possible modifier is the safest way to handle it.
-        \n\u2022 Minimize speaking near the ghost (Yokai).
-        \n\u2022 Turn off unnecessary electronics (Raiju).
-        \n\u2022 Keep the lights on in the Ghost Room (Mare).
-        \n\u2022 Have a source of flame in the Ghost Room (Onryo).
-        \n\u2022 Be prepared for possible early hunts (Demon).</string>
+        \n Mimic: orbs + 3 (2 on Nightmare) evidences.
+        \n\n\u2022 Orbs always present on Nightmare Mode.
+        \n\n\u2022 Orbs with no evidence.
+        \n\n\u2022 With orbs, always check other evidence to confirm no mimic.
+        \n\n\u2022 Treat a Mimic as if it had every possible modifier is the safest way to handle it.
+        \n Mimics change ghosts every 30s-2min.
+       \n\n\u2022 Behavior won\'t change mid-hunt.
+        \nChanging behavior? Check for mimic.
+        \n\n\u2022 Minimize speaking near the ghost (Yokai).
+        \n\n\u2022 Turn off unnecessary electronics (Raiju).
+        \n\n\u2022Keep the lights on in the Ghost Room (Mare).
+        \n\n\u2022 Have a source of flame in the Ghost Room (Onryo).
+        \\n\n\u2022 Be prepared for possible early hunts (Demon).</string>
     <string name="DeogenDesc">Surrounded by fog, Deogen elude ghost hunters. They find hidden prey and stalk them into exhaustion.
         \n\nUnique Strengths: Deogen sense the living and move quickly with no player in sight.
-        \n\nWeaknesses: Require energy to form, move slowly when approaching victims.</string>
+        \n\nWeaknesses: Require energy to form, move slowly when approaching victims
+        \n\nTips &amp; Tricks
+        \n\n\u2022 Deogen\'s hunt sanity threshold: 40%, not 50%.
+        \n\n\u2022 Can\'t hide from it.
+         \n\n\u2022 Distinct growl/Heavy breath spirit box response.
+        \n Deogen maintains continuous line-of-sight during hunts, shifting targets periodically. Incense can temporarily redirect it.
+        \n\n\u2022 Listen to speed change while hiding if it slows down approaching players.
+        \n Beware of similar behaviors from young Thaye, Revenant, or Hantu.
+        \n Choose hiding spots that allow easy escape or prepare Incense.
+        \n\n\u2022 Slow near you, easy to loop.
+        \n\n\u2022 More writing and dots chances.
+        \n\n\u2022 Spirit box always on in Nightmare
+        \n\n\u2022 Stunning with smudge sticks maintains slowed speed.
+    </string>
     <string name="MoroiDesc">Moroi drain energy from the living and place curses, curable by antidotes or distance.
         \n\nUnique Strengths: Stronger with weaker victims, faster at low player sanity.
-        \n\nWeaknesses: Hyperosmia weakens them for longer periods, smudge sticks blind them longer during hunts.</string>
+        \n\nWeaknesses: Hyperosmia weakens them for longer periods, smudge sticks blind them longer during hunts.
+    \n\nTips &amp; Tricks
+        \n\n\u2022 High speed Speed Demon ghost.
+        \n\n\u2022 Curses on spirit box or parabolic mic response.
+        \n\n\u2022 Curse doubles sanity drain, light/candles don\'t prevent it.
+        \n\n\u2022 Remove curse with sanity pills.
+        \n\n\u2022 Hunt-blind smudge Time: 12s (Moroi), 6s (others).
+        \n\n\u2022 Lower sanity = faster Moroi.
+        \n\n\u2022 Can Test by: Using Spirit box + light/candle, If sanity draining = Moroi.
+        \n\n\u2022 No-evidence: Faster Moroi as sanity drops.
+        \n\n\u2022 Line-of-sight speed boost, fastest at 0% sanity.
+        \n\n\u2022 Spirit box forced evidence on Nightmare.
+        \n\n\u2022 Listen for speed shifts during hunts or as sanity drops.
+        \n\n\u2022 Use sanity meds to slow it down during hunts.
+        \n\n\u2022 Use sanity monitor to detect excessive sanity drain.
+    </string>
     <string name="ThayeDesc">Thaye rapidly age and deteriorate when near the living. They become active and agile when entering a location.
         \n\nUnique Strengths: Active, defensive, and agile when entering the location.
         \n\nWeaknesses: Weaken over time, becoming slower and quieter with prolonged exposure to the living.
         \n\nTips &amp; Tricks
-        \n\n\u2022 Hunts at 75%
+        \n\n\u2022 Early Hunter: Hunts at 75%
         \n\n\u2022 Unique aging ability
             \n Starts young, aggressive, fast (2.5m/s),
             \n Ages near you every 1-2 mins, slower at old age (15%, 1m/s)
